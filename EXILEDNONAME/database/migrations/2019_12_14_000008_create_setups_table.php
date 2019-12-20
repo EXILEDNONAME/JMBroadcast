@@ -21,12 +21,8 @@ class CreateSetupsTable extends Migration
             $table->string('header_right');
             $table->string('content_left');
             $table->string('content_right');
-            $table->text('footer');
-
-            // $table->string('header_left_social');
-            // $table->string('header_right_custom');
-            // $table->string('headline');
-            // $table->string('footer_right');
+            $table->string('footer');
+            $table->string('footer_lines');
             $table->string('active')->default('1')->nullable();
             $table->string('status')->default('0')->nullable();
             $table->timestamps();

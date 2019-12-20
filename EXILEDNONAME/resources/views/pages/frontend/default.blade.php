@@ -3,12 +3,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>
-    {{ $data2->title }}
-  </title>
+  <title> {{ $data3->title }} </title>
   <meta content="" name="description">
   <meta content="" name="author">
   <meta content="" name="keywords">
+  <meta http-equiv="refresh" content="4; URL='/main'" />
   <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
   <link href="http://www.11-76.com/themes/the-one-responsive/css/plugins.css" media="all" rel="stylesheet" type="text/css">
   <link href="/assets/css/exilednoname1.css" media="all" rel="stylesheet" type="text/css">
@@ -42,28 +41,21 @@
   <!-- language bar start -->
   <div class="languages fadeIn-element">
     <ul>
-      <li class="active">
-        <a href="#">EN</a>
-      </li>
-      <li>
-        <a href="#">FR</a>
-      </li>
-      <li>
-        <a href="#">DE</a>
-      </li>
+      <li class="active"><a href="#">EN</a></li>
+      <li><a href="#">FR</a></li>
+      <li><a href="#">DE</a></li>
     </ul>
-  </div><!-- language bar end -->
-  <!-- template title start -->
+  </div>
+
   <div class="template-title fadeIn-element">
-    {{ $data2->page_title }}
-  </div><!-- template title end -->
-  <!-- location launcher start -->
+    <span id="page_title"></span>
+  </div>
+
   <div class="location-launcher fadeIn-element">
-    <a class="location-modal-launcher"> {{ $data2->header_left }} </a>
-  </div><!-- location launcher end -->
-  <!-- contact launcher start -->
+    <a class="location-modal-launcher"> <span id="header_left"></span> </a>
+  </div>
   <div class="contact-launcher fadeIn-element">
-    <a class="contact-modal-launcher"> {{ $data2->header_right }}</a>
+    <a class="contact-modal-launcher"> <span id="header_right"></span></a>
   </div><!-- contact launcher end -->
 </div><!-- border top end -->
 <!-- border bottom menu start -->
@@ -77,19 +69,18 @@
         </li>
       </ul>
     </nav>
-  </div><!-- menu end -->
-  <!-- credits launcher start -->
+  </div>
   <div class="credits fadeIn-element">
-    <a class="toggle-credits-content"><span>{{ $data2->content_right }}</span></a>
-  </div><!-- credits launcher end -->
-  <!-- instagram feed launcher start -->
-</div><!-- border bottom menu end -->
-<!-- border bottom start -->
-<div class="border-bottom bottom-position">
-  <center> <a href="#"> FOOTER TEXT </a> </center>
-  <marquee scrolldelay="125" width="100%">
+    <a class="toggle-credits-content"><span>
+      <span id="content_right"></span>
+    </span></a>
+  </div>
+</div>
 
-    <font color="Yellow";font size="4"><a href="#"> FOOTER LINES {{ $data2->footer }}</a>
+<div class="border-bottom bottom-position">
+  <center> <a href="#"> <span id="footer"></span> </a> </center>
+  <marquee scrolldelay="125" width="100%">
+    <font color="Yellow";font size="4"><a href="#"> <span id="footer_lines"></span> </a>
     </marquee>
   </div><!-- border bottom end -->
   <!-- main container start -->
@@ -102,14 +93,9 @@
         <div class="swiper-container swiper-slider-top-thumbs-vertical">
           <!-- thumbnail slider IMG start -->
           <div class="swiper-wrapper">
-            <?php $test = 'https://www.wallpaperflare.com/static/72/354/322/video-games-shadow-fiend-illustration-wallpaper-preview.jpg' ?>
-            <div class="swiper-slide overlay cover-all" style="background-image: url(<?php echo $test ?>);"></div>
-            <div class="swiper-slide overlay cover-all" style="background-image: url(<?php echo $test ?>);"></div>
-            <div class="swiper-slide overlay cover-all" style="background-image: url(<?php echo $test ?>);"></div>
-            <div class="swiper-slide overlay cover-all" style="background-image: url(<?php echo $test ?>);"></div>
-            <div class="swiper-slide overlay cover-all" style="background-image: url(<?php echo $test ?>);"></div>
-
-
+            @foreach ( $data1 as $item )
+            <div class="swiper-slide overlay cover-all" style="background-image: url('{{ $item->file }}')"></div>
+            @endforeach
           </div><!-- thumbnail slider IMG end -->
           <!-- controls start -->
           <div class="swiper-button-next swiper-button-white"></div>
@@ -119,7 +105,7 @@
         <div class="swiper-container swiper-slider-bottom-thumbs-vertical">
           <!-- thumbnail slider thumbnail IMG start -->
           <div class="swiper-wrapper">
-            @foreach ( $data3 as $item )
+            @foreach ( $data4 as $item )
             <div class="swiper-slide" style="background: linear-gradient(to right, yellow, orange, blue); background: -webkit-linear-gradient(left, yellow , orange, blue); background: -o-linear-gradient(right, yellow, orange, blue); background: -moz-linear-gradient(right, yellow, orange, blue); padding: 5px; border: 1px; -webkit-border-radius: 25px 10px; "> {{ $item->description }} </div>
             @endforeach
           </div><!-- thumbnail slider thumbnail IMG end -->
@@ -317,14 +303,114 @@
   <script src="http://www.11-76.com/themes/the-one-responsive/js/plugins.js" type="text/javascript"></script>
   <script src="http://www.11-76.com/themes/the-one-responsive/js/the-one.js" type="text/javascript"></script>
   <script>
+  // AUTO REFRESH DATETIME
   setInterval(
-    function(){
-      $.get("/data/datetime.php", function(Jam){
+    function() {
+      $.get("/data/datetime.php", function(Jam) {
         var xJam = Jam;
         var x = document.getElementById('time');
         x.innerHTML = xJam;
       });
-    },1000);
+    } ,
+    1000
+  );
+
+  // AUTO REFRESH FOOTER
+  setInterval(
+    function() {
+      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/footer.php", function(Jam) {
+        var xJam = Jam;
+        var x = document.getElementById('footer');
+        x.innerHTML = xJam;
+      });
+    } ,
+    1000
+  );
+
+  // AUTO REFRESH HEADER LEFT
+  setInterval(
+    function() {
+      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/header_left.php", function(Jam) {
+        var xJam = Jam;
+        var x = document.getElementById('header_left');
+        x.innerHTML = xJam;
+      });
+    } ,
+    1000
+  );
+
+  // AUTO REFRESH HEADER RIGHT
+  setInterval(
+    function() {
+      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/header_right.php", function(Jam) {
+        var xJam = Jam;
+        var x = document.getElementById('header_right');
+        x.innerHTML = xJam;
+      });
+    } ,
+    1000
+  );
+
+  // AUTO REFRESH PAGE TITLE
+  setInterval(
+    function() {
+      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/page_title.php", function(Jam) {
+        var xJam = Jam;
+        var x = document.getElementById('page_title');
+        x.innerHTML = xJam;
+      });
+    } ,
+    1000
+  );
+
+  // AUTO REFRESH TITLE
+  setInterval(
+    function() {
+      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/title.php", function(Jam) {
+        var xJam = Jam;
+        var x = document.getElementById('title');
+        x.innerHTML = xJam;
+      });
+    } ,
+    1000
+  );
+
+  // AUTO REFRESH CONTENT RIGHT
+  setInterval(
+    function() {
+      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/content_right.php", function(Jam) {
+        var xJam = Jam;
+        var x = document.getElementById('content_right');
+        x.innerHTML = xJam;
+      });
+    } ,
+    1000
+  );
+
+  // AUTO REFRESH FOOTER LINES
+  setInterval(
+    function() {
+      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/footer_lines.php", function(Jam) {
+        var xJam = Jam;
+        var x = document.getElementById('footer_lines');
+        x.innerHTML = xJam;
+      });
+    } ,
+    1000
+  );
+
+  // AUTO REFRESH SLIDER IMAGE
+  setInterval(
+    function() {
+      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/slider_image.php", function(Jam) {
+        var xJam = Jam;
+        var x = document.getElementById('slider_image');
+        x.innerHTML = xJam;
+      });
+    } ,
+    1000
+  );
+
   </script>
 </body>
 </html>

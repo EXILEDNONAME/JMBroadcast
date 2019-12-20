@@ -11,9 +11,10 @@ use DB;
 
 class HomeController extends Controller {
   public function index(){
-    $data1 = Image::where('type', 1)->get();
-    $data2 = Setup::first();
-    $data3 = Content::all();
-    return view('pages.frontend.default', compact('data1', 'data2', 'data3'));
+    $data1 = Image::all();
+    $data2 = Video::where('type', 2)->where('active', 1)->get();
+    $data3 = Setup::first();
+    $data4 = Content::all();
+    return view('pages.frontend.default', compact('data1', 'data2', 'data3', 'data4'));
   }
 }

@@ -116,7 +116,7 @@
     <td width="24%" class="text-nowrap align-middle"> </td>
     <td width="1%" class="text-nowrap align-middle"> </td>
     <td width="75%" class="text-nowrap align-middle">
-      <input class="btn btn-primary" type="submit" value="Upload">
+      <input class="btn btn-primary" type="submit" value="Update">
       <a href="/dashboard/contents"><button type="cancel" class="btn btn-danger"> Cancel </button></a>
     </td>
   </tr>
