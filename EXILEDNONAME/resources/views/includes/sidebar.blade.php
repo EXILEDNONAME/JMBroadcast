@@ -1,98 +1,128 @@
-<div class="sidebar sidebar-dark sidebar-main sidebar-fixed sidebar-expand-md">
-
-  <!-- Sidebar mobile toggler -->
-  <div class="sidebar-mobile-toggler text-center">
-    <a href="#" class="sidebar-mobile-main-toggle">
-      <i class="icon-arrow-left8"></i>
-    </a>
-    Navigation
-    <a href="#" class="sidebar-mobile-expand">
-      <i class="icon-screen-full"></i>
-      <i class="icon-screen-normal"></i>
-    </a>
-  </div>
-  <!-- /sidebar mobile toggler -->
-
-
-  <!-- Sidebar content -->
-  <div class="sidebar-content">
-
-    <!-- User menu -->
-    <div class="sidebar-user">
-      <div class="card-body">
-        <div class="media">
-          <div class="mr-3">
-            <a href="#"><img src="/assets/images/placeholders/placeholder.jpg" width="38" height="38" class="rounded-circle" alt=""></a>
+<div id="sidebar" class="sidebar">
+  <!-- begin sidebar scrollbar -->
+  <div data-scrollbar="true" data-height="100%">
+    <!-- begin sidebar user -->
+    <ul class="nav">
+      <li class="nav-profile">
+        <a href="javascript:;" data-toggle="nav-profile">
+          <div class="cover with-shadow"></div>
+          <div class="info">
+            <b class="caret pull-right"></b>
+            {{ UsersGetName() }}
+            <small>{{ AccessesGetName() }}</small>
           </div>
+        </a>
+      </li>
+      <li>
+        <ul class="nav nav-profile">
+          <li><a href="javascript:;"><i class="fa fa-cog"></i> Settings</a></li>
+          <li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> Send Feedback</a></li>
+          <li><a href="javascript:;"><i class="fa fa-question-circle"></i> Helps</a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- end sidebar user -->
+    <!-- begin sidebar nav -->
+    <ul class="nav">
+      <li class="nav-header"> Main </li>
+      <li class="has-sub">
+        <a href="#">
+          <i class="fa fa-th-large"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
 
-          <div class="media-body">
-            <div class="media-title font-weight-semibold">{{ UsersGetName() }}</div>
-            <div class="font-size-xs opacity-50" title="Role {{ AccessesGetName() }}">
-              <i class="icon-user font-size-sm"></i> &nbsp;{{ AccessesGetName() }}
-            </div>
-          </div>
+      <!-- CONTENTS -->
+      <li class="has-sub {{ (request()->is('dashboard/galleries*')) ? 'active' : '' }}">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fa fa-table"></i>
+          <span> Galleries </span>
+        </a>
+        <ul class="sub-menu">
+          <li class="{{ (request()->is('dashboard/galleries')) ? 'active' : '' }}"><a href="/dashboard/galleries"> All Galleries </a></li>
+          <li class="has-sub {{ (request()->is('dashboard/galleries/uploads*')) ? 'active' : '' }}">
+            <a href="javascript:;">
+              <b class="caret"></b>
+              <span> File Uploads </span>
+            </a>
+            <ul class="sub-menu">
+              <li class="{{ (request()->is('dashboard/galleries/uploads/images')) ? 'active' : '' }}"><a href="/dashboard/galleries/uploads/images"> Images </a></li>
+              <li class="{{ (request()->is('dashboard/galleries/uploads/videos')) ? 'active' : '' }}"><a href="/dashboard/galleries/uploads/videos"> Videos </a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <!-- // CONTENTS -->
 
-          <div class="ml-3 align-self-center">
-            <a href="#" class="text-white" title="Sign Out"><i class="icon-exit"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /user menu -->
+      <!-- SET-UP -->
+      <li class="has-sub {{ (request()->is('dashboard/contents*')) ? 'active' : '' }}">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fa fa-table"></i>
+          <span> Contents </span>
+        </a>
+        <ul class="sub-menu">
+          <li class="{{ (request()->is('dashboard/contents')) ? 'active' : '' }}"><a href="/dashboard/contents"> All Contents </a></li>
+          <li class="{{ (request()->is('dashboard/contents/create')) ? 'active' : '' }}"><a href="/dashboard/contents/create"> Create New Content </a></li>
+        </ul>
+      </li>
+      <!-- // CONTENTS -->
 
+      <!-- SET-UP -->
+      <li class="{{ (request()->is('dashboard/setups*')) ? 'active' : '' }}">
+        <a href="/dashboard/setups">
+          <i class="fa fa-table"></i>
+          <span> Setups </span>
+        </a>
+      </li>
+      <!-- // SETUPS -->
 
-    <!-- Main navigation -->
-    <div class="card card-sidebar-mobile">
-      <ul class="nav nav-sidebar" data-nav-type="accordion">
-        <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">
-            <i class="icon-home4"></i>
-            <span> Dashboard </span>
-          </a>
-        </li>
-        <li class="{{ (request()->is('dashboard/contents*')) ? 'nav-item nav-item-submenu nav-item-expanded nav-item-open' : 'nav-item nav-item-submenu' }}">
-          <a href="#" class="nav-link"><i class="icon-copy"></i> <span> Contents </span></a>
-          <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-            <li class="nav-item"><a href="/dashboard/contents" class="nav-link active"> All Contents </a></li>
-            <li class="nav-item"><a href="/dashboard/contents/upload" class="nav-link"> Upload New Content </a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="icon-list-unordered"></i>
+      <ul class="nav">
+        <li class="nav-header"> System </li>
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <i class="fa fa-table"></i>
             <span> File Manager </span>
           </a>
+          <ul class="sub-menu">
+            <li><a href="#"> Image </a></li>
+            <li><a href="#"> Video </a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <i class="fa fa-th-large"></i>
+            <span> Access Managements </span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="#"> Roles </a></li>
+            <li><a href="#"> Users </a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <i class="fa fa-th-large"></i>
+            <span> Settings </span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="#"> Profile </a></li>
+            <li><a href="#"> Sign Out </a></li>
+          </ul>
         </li>
       </ul>
 
-      <ul class="nav nav-sidebar" data-nav-type="accordion">
 
-        <li class="nav-item-header">
-          <div class="text-uppercase font-size-xs line-height-xs"> Settings </div>
-          <i class="icon-menu" title="Main"></i>
-        </li>
-        <li class="nav-item nav-item-submenu">
-          <a href="#" class="nav-link">
-            <i class="icon-copy"></i>
-            <span> Access </span></a>
-            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-              <li class="nav-item"><a href="/dashboard/access/users" class="nav-link"> Users </a></li>
-              <li class="nav-item"><a href="/dashboard/access/roles" class="nav-link"> Roles </a></li>
-            </ul>
-          </li>
 
-          <li class="nav-item">
-            <a href="changelog.html" class="nav-link">
-              <i class="icon-exit"></i>
-              <span> Sign Out </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- /main navigation -->
-
-    </div>
-    <!-- /sidebar content -->
-
+      <!-- begin sidebar minify button -->
+      <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+      <!-- end sidebar minify button -->
+    </ul>
+    <!-- end sidebar nav -->
   </div>
+  <!-- end sidebar scrollbar -->
+</div>
+<div class="sidebar-bg"></div>

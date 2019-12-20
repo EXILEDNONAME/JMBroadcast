@@ -10,6 +10,6 @@ class Content extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['file', 'name', 'description', 'type', 'active', 'sort', 'status'];
+    protected $fillable = ['name', 'description', 'active', 'sort', 'status'];
 
 }

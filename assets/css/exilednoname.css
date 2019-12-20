@@ -178,7 +178,7 @@ Preloads
   background-color: #fff;
 }
 .theme-is-dark .pace {
-  background-image: url(/assets/images/logo/default.png);
+  background-image: url(/assets/img/logo/default.png);
   background-color: #333;
 }
 .theme-is-dark .preloader-cover-screen {

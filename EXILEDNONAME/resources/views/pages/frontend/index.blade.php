@@ -38,26 +38,20 @@
 <body class="home blog woocommerce-no-js rightclick-block single-author theme-is-dark page-is-fullscreen fullscreen-slideshow">
   <div class="stickymenu-zone outer-wrap">
     <div id="test"></div>
-
     <div class="outer-header-wrap clearfix">
-
       <nav>
-
         <div class="mainmenu-navigation">
-
           <div class="header-logo-section">
             <div class="logo">
               <a href="http://kinetika.imaginem.co?themeskin=dark">
-                <img class="logo-theme-main" src="/assets/images/logo/default_white.png" alt="logo" />
+                <img class="logo-theme-main" src="/assets/img/logo/default.png" alt="logo" />
               </a>
             </div>
           </div>
         </div>
-
       </div>
-
     </nav>
-</div>
+  </div>
 </div>
 
 <div id="home" class="container-wrapper container-fullwidth">
@@ -95,63 +89,34 @@
 
   <!-- RIGHT CONTENT -->
   <div class="gridblock-owlcarousel-wrap mtheme-events-carousel clearfix">
-    <div class="mtheme-events-heading">Upcoming Events</div>
+    <div class="mtheme-events-heading"> DESC </div>
     <div id="owl-6033-5df9e4237bb33" class="owl-carousel owl-slideshow-element">
 
       <!-- START -->
+      @php $slider = DB::table('contents')->where('setup', 2)->where('active', 1)->get(); @endphp
+      @foreach ( $slider as $item )
       <div class="slideshow-box-wrapper">
         <div class="slideshow-box-image">
-          <video src="/assets/video/a.mp4" id="myvideo" class="displayed-image" autoplay muted style="background:black" loop></video>
+          @if ( $item->type == 1 ) <video src="/EXILEDNONAME/files/{{ $item->file }}" class="displayed-image" autoplay muted style="background:black" loop></video> @endif
+          @if ( $item->type == 2 ) <img src="/EXILEDNONAME/files/{{ $item->file }}" class="displayed-image"> @endif
         </div>
         <div class="slideshow-box-content">
           <div class="slideshow-box-content-inner">
             <div class="slideshow-box-title">
-              Event with Slideshow
+              {{ $item->name }}
             </div>
             <div class="slideshow-box-description">
-              Fugit augue maiestatis quo eu, ocurreret appellantur has an. Quo cu error choro ubique.
+              {{ $item->description }}
             </div>
           </div>
         </div>
       </div>
-
-      <div class="slideshow-box-wrapper">
-        <div class="slideshow-box-image">
-          <img src="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/05/photodune-11478879-man-fire-show-on-the-beach-m-480x296.jpg" alt="" class="displayed-image"/>
-        </div>
-        <div class="slideshow-box-content">
-          <div class="slideshow-box-content-inner">
-            <div class="slideshow-box-title">
-              Event postponed
-            </div>
-            <div class="slideshow-box-description">
-              Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida pulvinar facilisis.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="slideshow-box-wrapper">
-        <div class="slideshow-box-image">
-          <a href="http://kinetika.imaginem.co/mevents/cancelled-event/?themeskin=dark">
-            <img src="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/photodune-1616705-silhouette-of-an-attractive-female-snorkeler-m-480x296.jpg" alt="" class="displayed-image"/>
-          </a>
-        </div>
-        <div class="slideshow-box-content">
-          <div class="slideshow-box-content-inner">
-            <div class="slideshow-box-title">
-              <a href="http://kinetika.imaginem.co/mevents/cancelled-event/?themeskin=dark">Cancelled Event</a>
-            </div>
-            <div class="slideshow-box-description">Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida pulvinar facilisis.</div>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
   <!-- // RIGHT CONTENT -->
 
   <script>
-  /* <![CDATA[ */
   (function($){
     $(window).load(function(){
       var sync1 = $("#owl-6033-5df9e4237bb33");
@@ -167,7 +132,6 @@
       });
     })
   })(jQuery);
-  /* ]]> */
   </script>
   <!-- <div id="backgroundvideo">
   <video autoplay muted id="videocontainer" class="video-js vjs-default-skin" preload="auto" width="100%" poster="http://kinetika.imaginem.co/wp-content/uploads/sites/8/revslider/fullscreenrevslider/explore.jpg">
@@ -182,49 +146,16 @@
   <div class="fullscreen-footer-wrap">
     <marquee behavior="scroll" direction="left" scrollamount="1">
       <span style="color:white">
-        @foreach ( $data as $item )
-        {{ $item->description }}
-        @endforeach
+        @php
+        $headline = DB::table('contents')->where('setup', 1)->where('active', 1)->get();
+        foreach ( $headline as $item ) {
+          echo $item->description;
+        }
+        @endphp
       </span>
     </marquee>
-
-    <!-- <div class="fullscreen-footer-info"></div>
-    <div class="fullscreen-footer-social">
-    <marque> THIS IS HEADLINE </span></marquee>
-    <div class="login-socials-wrap clearfix">
-
-    <aside id="msocial-widget-3" class="widget MSocial_Widget"><div class="social-header-wrap">
-    <ul>
-
-    <li class="social-icon">
-    <a class="ntips" title="Facebook" href="#"  target="_blank">
-    Copyright &copy; 2019
-  </a>
-</li>
-<li class="social-icon">
-<a class="ntips" title="Facebook" href="#"  target="_blank">
-<i class="fa fa-facebook"></i>
-</a>
-</li>
-<li class="social-icon">
-<a class="ntips" title="Twitter" href="#"  target="_blank">
-<i class="fa fa-twitter"></i>
-</a>
-</li>
-<li class="social-icon">
-<a class="ntips" title="Instagram" href="#"  target="_blank">
-<i class="fa fa-instagram"></i>
-</a>
-</li>
-<li class="social-icon">
-<a class="ntips" title="Vimeo" href="#"  target="_blank">
-<i class="fa fa-vimeo-square"></i>
-</a>
-</li>
-</ul></div></aside>		</div>
-</div> -->
-</div>
-<div id="goto-top" title="top of page"><i class="fa fa-chevron-up"></i></div>
+  </div>
+  <div id="goto-top" title="top of page"><i class="fa fa-chevron-up"></i></div>
 </footer>
 <!-- // FOOTER -->
 
@@ -286,12 +217,13 @@ jQuery(function($){
     thumb_links           :	1,
     thumbnail_navigation  : 0,
     slides                : [
+      @php $data = DB::table('contents')->where('setup', 0)->where('type', 2)->where('active', 1)->get(); @endphp
       @foreach ($data as $item)
       {
-        image : '<?php echo "/files/$item->file"; ?>',
+        image : '<?php echo "/EXILEDNONAME/files/$item->file"; ?>',
         alttext : 'EXILEDNONAME',
         title : [
-          '<div class="fullscreen-slideshow-color" data-color="bright"></div><div class="slideshow-content-wrap"><div class="slideshow_title  slideshow_title_animation"><?php echo $item->name; ?></div><div class="slideshow_caption"><p><?php echo $item->description; ?></p><br /></div><div class="slideshow_content_link ">',
+          '<div class="fullscreen-slideshow-color" data-color="bright"></div><div class="slideshow-content-wrap"><div style="background-color:rgba(0,0,0,0.5);" class="slideshow_title  slideshow_title_animation"><?php echo $item->name; ?></div><div class="slideshow_caption"><p><?php echo $item->description; ?></p><br /></div><div class="slideshow_content_link ">',
           '</div></div>',
         ],
         thumb : '',
@@ -321,7 +253,7 @@ jQuery(function($){
 <script type="text/javascript">
 var timestamp = '<?=time();?>';
 function updateTime(){
-  $('#test').load('files/headline.php');
+  $('#test').load('data/headline.php');
 }
 
 $(function(){

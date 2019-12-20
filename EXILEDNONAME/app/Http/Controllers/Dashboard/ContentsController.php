@@ -17,44 +17,37 @@ class ContentsController extends Controller {
     return view('pages.dashboard.content.index', compact('data'));
   }
 
-  public function upload(){
-		return view('pages.dashboard.content.upload');
-	}
+  public function show($id) {
+    $data = Content::where('id', $id)->first();
+    return view('pages.dashboard.content.show', compact('data'));
+  }
 
-  public function process(Request $request){
-		$this->validate($request, [
-      'file' => 'required|mimes:mp4,jpg,jpeg,JPG,JPEG,png,bmp,gif|max:1000000',
-		]);
+  public function create() {
+    return view('pages.dashboard.content.create',);
+  }
 
-		$file = $request->file('file');
-		$file_name = time()."_".$file->getClientOriginalName();
-		$target_upload = 'files';
-		$file->move($target_upload, $file_name);
+  public function store(Request $request) {
+    $requestData = $request->all();
+    Content::create($requestData);
+    return redirect('dashboard/contents')->with('success', 'Success, content has been added.');
+  }
 
-		Content::create([
-			'file' => $file_name,
-			'name' => $request->name,
-			'description' => $request->description,
-			'type' => $request->type,
-      'active' => $request->active,
-      'sort' => $request->sort,
-      'status' => 0,
-      'created_at' => $request->created_at,
-		]);
+  public function edit($id) {
+    $data = Content::where('id', $id)->first();
+    return view('pages.dashboard.content.edit', compact('data'));
+  }
 
-		return redirect('/dashboard/contents')->with('success', 'Success Upload File.');
-	}
+  public function update(Request $request, $id) {
+    $requestData = $request->all();
+    $data = Content::findOrFail($id);
+    $data->update($requestData);
+    return redirect('/dashboard/contents')->with('success', 'Success, content has been updated.');
+  }
 
   public function destroy($id) {
     Content::destroy($id);
-    return redirect('dashboard/contents')->with('success', 'Success, content has been removed.');
+    return redirect('/dashboard/contents')->with('success', 'Success, content has been removed.');
   }
-
-  public function create() { return redirect('/'); }
-  public function edit() { return redirect('/'); }
-  public function store() { return redirect('/'); }
-  public function update() { return redirect('/'); }
-  public function show() { return redirect('/'); }
 
   public function active($id) {
     DB::table('contents')->where('id', $id)->update([ 'active' => 1 ]);
@@ -64,16 +57,6 @@ class ContentsController extends Controller {
   public function nonactive($id) {
     DB::table('contents')->where('id', $id)->update([ 'active' => 0 ]);
     return redirect('/dashboard/contents')->with('success', 'Success, switching content to non-active.');
-  }
-
-  public function setdefault($id) {
-    $data = DB::table('contents')->where('status', 0)->where('id', $id)->get();
-    foreach ( $data as $item ) {
-      DB::table('contents')->update([ 'status' => 0 ]);
-    }
-
-    DB::table('contents')->where('id', $id)->update([ 'status' => 1 ]);
-    return redirect('dashboard/contents')->with('success', 'Success, setting content to defaults.');
   }
 
 }
