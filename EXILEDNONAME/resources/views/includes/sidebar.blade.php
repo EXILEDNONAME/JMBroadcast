@@ -25,7 +25,7 @@
     <!-- begin sidebar nav -->
     <ul class="nav">
       <li class="nav-header"> Main </li>
-      <li class="has-sub">
+      <li class="{{ (request()->is('dashboard')) ? 'active' : '' }}">
         <a href="#">
           <i class="fa fa-th-large"></i>
           <span>Dashboard</span>
@@ -110,7 +110,7 @@
           </a>
           <ul class="sub-menu">
             <li><a href="#"> Profile </a></li>
-            <li><a href="#"> Sign Out </a></li>
+            <li><a href="/dashboard/signout"> Sign Out </a></li>
           </ul>
         </li>
       </ul>

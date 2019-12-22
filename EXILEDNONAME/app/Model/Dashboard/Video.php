@@ -10,6 +10,6 @@ class Video extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['file', 'description', 'active', 'sort', 'status'];
+    protected $fillable = ['file', 'name', 'description', 'type', 'active', 'sort', 'status'];
 
 }

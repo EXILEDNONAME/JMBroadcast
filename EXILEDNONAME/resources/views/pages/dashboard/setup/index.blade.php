@@ -4,8 +4,8 @@
 <link href="/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
 @endpush
 
-@section('page-header', 'PAGE HEADER')
-@section('page-description', 'PAGE DESCRIPTION')
+@section('page-header', 'Setup Pages')
+@section('page-description', '// ...')
 
 @section('content')
 @foreach ( $data as $item )
@@ -41,13 +41,6 @@
       <input type="text" class="form-control" name="header_right" value="{{ $item->header_right }}"required>
     </td>
   </tr>
-  <!-- <tr class="form-group {{ $errors->has('content_left') ? 'has-error' : ''}}">
-    <td width="24%" class="text-nowrap align-middle"> Content left </td>
-    <td width="1%" class="text-nowrap align-middle"> : </td>
-    <td width="75%">
-      <input type="text" class="form-control" name="content_left" value="{{ $item->content_left }}"required>
-    </td>
-  </tr> -->
   <tr class="form-group {{ $errors->has('content_right') ? 'has-error' : ''}}">
     <td width="24%" class="text-nowrap align-middle"> Content Right </td>
     <td width="1%" class="text-nowrap align-middle"> : </td>
@@ -59,57 +52,29 @@
     <td width="24%" class="text-nowrap align-middle"> Footer </td>
     <td width="1%" class="text-nowrap align-middle"> : </td>
     <td width="75%">
-      <textarea class="form-control" name="footer" required> {{ $item->footer }}</textarea>
+      <input type="text" class="form-control" name="footer" value="{{ $item->footer }}"required>
     </td>
   </tr>
-
-  <!-- <tr class="form-group {{ $errors->has('header_left_social') ? 'has-error' : ''}}">
-    <td width="24%" class="text-nowrap align-middle"> Header Left Social </td>
+  <tr class="form-group {{ $errors->has('footer_lines') ? 'has-error' : ''}}">
+    <td width="24%" class="text-nowrap align-middle"> Footer Lines </td>
     <td width="1%" class="text-nowrap align-middle"> : </td>
     <td width="75%">
-      <input type="text" class="form-control" name="header_left_social" required>
+      <textarea class="form-control" name="footer_lines" required> {{ $item->footer_lines }}</textarea>
     </td>
   </tr>
-  <tr class="form-group {{ $errors->has('header_right_custom') ? 'has-error' : ''}}">
-    <td width="24%" class="text-nowrap align-middle"> Header Right Custom </td>
+  <tr class="form-group {{ $errors->has('timer_slider_image') ? 'has-error' : ''}}">
+    <td width="24%" class="text-nowrap align-middle"> Set Timer Slide Image /s </td>
     <td width="1%" class="text-nowrap align-middle"> : </td>
     <td width="75%">
-      <input type="text" class="form-control" name="header_right_custom" required>
+      <textarea class="form-control" name="timer_slider_image" required> {{ $item->timer_slider_image }}</textarea>
     </td>
   </tr>
-  <tr class="form-group {{ $errors->has('headline') ? 'has-error' : ''}}">
-    <td width="24%" class="text-nowrap align-middle"> Headline </td>
+  <tr>
+  <tr class="form-group {{ $errors->has('header_social') ? 'has-error' : ''}}">
+    <td width="24%" class="text-nowrap align-middle"> Header Social </td>
     <td width="1%" class="text-nowrap align-middle"> : </td>
     <td width="75%">
-      <input type="text" class="form-control" name="headline" required>
-    </td>
-  </tr>
-  <tr class="form-group {{ $errors->has('footer') ? 'has-error' : ''}}">
-    <td width="24%" class="text-nowrap align-middle"> Footer </td>
-    <td width="1%" class="text-nowrap align-middle"> : </td>
-    <td width="75%">
-      <input type="text" class="form-control" name="footer" required>
-    </td>
-  </tr> -->
-  <!-- <tr class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
-    <td width="24%" class="text-nowrap align-middle"> Type </td>
-    <td width="1%" class="text-nowrap align-middle"> : </td>
-    <td width="75%">
-      <select class="form-control" name="type" required>
-        <option value=""> - Select Type - </option>
-        <option value="1"> Video </option>
-        <option value="2"> Image </option>
-      </select>
-    </td>
-  </tr> -->
-  <tr class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
-    <td width="24%" class="text-nowrap align-middle"> Active </td>
-    <td width="1%" class="text-nowrap align-middle"> : </td>
-    <td width="75%">
-      <select class="form-control" name="active">
-        <option value="1"> {{ SelectActiveYes() }} </option>
-        <option value="0"> {{ SelectActiveNo() }} </option>
-      </select>
+      <textarea class="form-control" name="header_social" required> {{ $item->header_social }}</textarea>
     </td>
   </tr>
   <tr>
@@ -117,7 +82,7 @@
     <td width="1%" class="text-nowrap align-middle"> </td>
     <td width="75%" class="text-nowrap align-middle">
       <input class="btn btn-primary" type="submit" value="Update">
-      <a href="/dashboard/contents"><button type="cancel" class="btn btn-danger"> Cancel </button></a>
+      <a href="/dashboard/setups"><button type="cancel" class="btn btn-danger"> Cancel </button></a>
     </td>
   </tr>
 </table>

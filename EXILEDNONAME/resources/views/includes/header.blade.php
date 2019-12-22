@@ -96,7 +96,7 @@
       </a>
       <div class="dropdown-menu dropdown-menu-right">
         <!-- <div class="dropdown-divider"></div> -->
-        <a href="#" class="dropdown-item"> Sign Out </a>
+        <a href="/dashboard/signout" class="dropdown-item"> Sign Out </a>
       </div>
     </li>
   </ul>

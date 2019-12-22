@@ -5089,7 +5089,6 @@ filter: alpha(opacity=35);
    -moz-opacity: 0.35;
 -webkit-opacity: 0.35;
 filter: alpha(opacity=35);
--ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
 cursor: pointer;
 }
 
@@ -5099,7 +5098,7 @@ cursor: pointer;
    -moz-opacity: 1;
 -webkit-opacity: 1;
 filter: alpha(opacity=100);
--ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+
 }
 
 .swiper-button-next,

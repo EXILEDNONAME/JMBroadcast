@@ -18,7 +18,7 @@
     <td width="24%" class="text-nowrap align-middle"> </td>
     <td width="1%" class="text-nowrap align-middle"> </td>
     <td width="75%" class="text-nowrap align-middle">
-      <a href="/dashboard/members"><button type="cancel" class="btn btn-danger"><i class="fas fa-undo-alt"></i> Back</button></a>
+      <a href="/dashboard/contents"><button type="cancel" class="btn btn-danger"><i class="fas fa-undo-alt"></i> Back</button></a>
       <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
     </td>
   </tr>

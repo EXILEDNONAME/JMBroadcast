@@ -3,29 +3,34 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title> {{ $data3->title }} </title>
+    <title> {{ $data3->title }} </title>
   <meta content="" name="description">
   <meta content="" name="author">
   <meta content="" name="keywords">
-  <meta http-equiv="refresh" content="{{ $data3->timer_slider_image }}; URL='/main'" />
   <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-  <link href="/assets/css/exilednoname.css" media="all" rel="stylesheet" type="text/css">
-  <!-- <link href="/assets/css/main.css" media="all" rel="stylesheet" type="text/css"> -->
-  <link href="http://www.11-76.com/themes/the-one-responsive/css/style.css" media="all" rel="stylesheet" type="text/css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href="http://www.11-76.com/themes/the-one-responsive/css/plugins.css" media="all" rel="stylesheet" type="text/css">
+  <link href="http://www.11-76.com/themes/the-one-responsive/css/style.css" media="all" rel="stylesheet" type="text/css"><!-- style end -->
+  <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7COswald:300,400,700" rel="stylesheet" type="text/css"><!-- google fonts end -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js">
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#video1").bind('ended', function(){
+      location.href="/";
+    });
+  });
+  </script>
 </head>
-<body class="body-light">
-  <div class="preloader-bg preloader-bg-light"></div>
-  <div class="preloader-light" id="preloader">
+<body>
+  <div class="preloader-bg"></div>
+  <div id="preloader">
     <div id="preloader-status">
-      <div class="preloader-position loader loader-light">
+      <div class="preloader-position loader">
         <span></span>
       </div>
     </div>
   </div>
-
-  <div class="border-top top-position" style="background: #fff">
+  <!-- <div class="border-top top-position" style="background: #fff">
     <div class="social-icons-wrapper fadeIn-element">
       <table border="0">
         <tr>
@@ -53,7 +58,7 @@
     <div class="contact-launcher fadeIn-element">
       <a class="contact-modal-launcher"> <span id="header_right" style="color: #000"></span></a>
     </div>
-  </div>
+  </div> -->
 
   <div class="border-bottom-menu bottom-position">
     <div class="fadeIn-element" id="menu">
@@ -76,39 +81,25 @@
     </marquee>
     <center> <a href="#"> <span id="footer"></span> </a> </center>
   </div>
+  <!-- main container start -->
   <div id="containerOT">
-    <div class="hero-fullscreen">
-      <div class="hero-bg">
-        <div class="swiper-container swiper-slider-top-thumbs-vertical">
-          <div class="swiper-wrapper">
-            @foreach ( $data1 as $item )
-            <div class="swiper-slide overlay cover-all" style="background-image: url('EXILEDNONAME/files/{{ $item->file }}')"></div>
-            @endforeach
-          </div>
-          <div class="swiper-button-next swiper-button-white"></div>
-          <div class="swiper-button-prev swiper-button-white"></div>
-        </div>
-        <div class="swiper-slider-bottom-thumbs-vertical" style="background-color: #ffffff">
-          <div class="swiper-wrapper">
-            @foreach ( $data4 as $item )
-            <div class="swiper-slide" style="background: linear-gradient(to right, yellow, orange, blue); background: -webkit-linear-gradient(left, yellow , orange, blue); background: -o-linear-gradient(right, yellow, orange, blue); background: -moz-linear-gradient(right, yellow, orange, blue); padding: 5px; border: 1px; -webkit-border-radius: 10px 10px; ">
-              <span style="font-size: 95%">
-                <b>{{ $item->name }} : </b><br>
-                {{ $item->description }}
-              </span>
-              </div>
-            @endforeach
-          </div>
-        </div>
-      </div>
+    <div class="hero-fullscreen overlay cover-all-video">
+
+        @if ( count($data2) != false )
+        @foreach ( $data2 as $item )
+        <video id="video1" src="EXILEDNONAME/files/{{ $item->file }}" autoplay muted></video>
+        <!-- <div class="hero-bg" data-vide-bg="EXILEDNONAME/files/{{ $item->file }}" data-vide-options="loop: true, muted: true, position: 0% 0%" id="video-bg"></div> -->
+        @endforeach
+        @else
+        <video id="video1" src="EXILEDNONAME/files/404.mp4" autoplay muted></video>
+        @endif
+
     </div>
   </div>
 
-  <!-- MAIN SCRIPT -->
-  <!-- <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
   <script src="http://www.11-76.com/themes/the-one-responsive/js/plugins.js" type="text/javascript"></script>
   <script src="http://www.11-76.com/themes/the-one-responsive/js/the-one.js" type="text/javascript"></script>
-  <!-- // MAIN SCRIPT -->
 
   <script>
   // AUTO REFRESH DATETIME

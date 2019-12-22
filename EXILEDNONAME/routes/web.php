@@ -3,11 +3,16 @@
 
 // Route::get('/', function () { return view('pages.frontend.index'); });
 Route::get('/', 'Frontend\HomeController@index');
+Route::get('/main', 'Frontend\HomeController@main');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashboard/access/users', 'Dashboard\Access\UsersController@index');
+
+// DASHBOARD -- MAIN
+Route::get('/dashboard', 'Dashboard\DefaultsController@index');
+Route::get('/dashboard/signout', 'Dashboard\DefaultsController@signout');
 
 // DASHBOARD -- GALLERIES
 Route::get('/dashboard/galleries', 'Dashboard\GalleriesController@index');

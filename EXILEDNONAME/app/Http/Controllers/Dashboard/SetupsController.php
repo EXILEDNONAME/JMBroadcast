@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\Dashboard\Setup;
+use App\Http\Requests;
+use Illuminate\Validation\Rule;
 use DB;
-use File;
+
+use App\Http\Requests\Dashboard\Setup\UpdateRequest;
+use App\Model\Dashboard\Setup;
 
 class SetupsController extends Controller {
 
@@ -18,35 +21,18 @@ class SetupsController extends Controller {
     return view('pages.dashboard.setup.index', compact('data'));
   }
 
-  public function process(Request $request) {
+  public function process(UpdateRequest $request) {
     DB::table('setups')->where('id', 1)->update([
-          'title' => $request->title,
-          'page_title' => $request->page_title,
-          'header_left' => $request->header_left,
-          'header_right' => $request->header_right,
-          // 'content_left' => $request->content_left,
-          'content_right' => $request->content_right,
-          'footer' => $request->footer,
-          'active' => $request->active,
-          'status' => $request->status,
+      'title' => $request->title,
+      'page_title' => $request->page_title,
+      'header_left' => $request->header_left,
+      'header_right' => $request->header_right,
+      'content_right' => $request->content_right,
+      'footer' => $request->footer,
+      'footer_lines' => $request->footer_lines,
+      'timer_slider_image' => $request->timer_slider_image,
+      'header_social' => $request->header_social,
     ]);
     return redirect('dashboard/setups')->with('success', 'Success, setting setup.');
   }
-
-  // public function process(Request $request){
-  //   $this->validate($request, [
-  //     'title' => 'required',
-  //   ]);
-  //   Setup::update([
-  //     'title' => $request->title,
-  //     'page_title' => $request->page_title,
-  //     'header_left' => $request->header_left,
-  //     'header_right' => $request->header_right,
-  //     'active' => $request->active,
-  //     'status' => $request->status,
-  //   ]);
-  //
-  //   return redirect('/dashboard/galleries')->with('success', 'Success Upload File.');
-  // }
-
 }

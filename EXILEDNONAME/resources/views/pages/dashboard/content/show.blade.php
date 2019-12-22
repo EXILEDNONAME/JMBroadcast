@@ -4,8 +4,8 @@
 <link href="/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
 @endpush
 
-@section('page-header', 'PAGE HEADER')
-@section('page-description', 'PAGE DESCRIPTION')
+@section('page-header', 'Show Detail Content')
+@section('page-description', '// ...')
 
 @section('content')
 <a href="/dashboard/contents"><button class="btn  btn-inverse btn-sm"><i class="fas fa-undo-alt"></i> Back</button></a>

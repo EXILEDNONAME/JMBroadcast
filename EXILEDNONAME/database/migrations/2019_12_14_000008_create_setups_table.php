@@ -15,16 +15,16 @@ class CreateSetupsTable extends Migration
     {
         Schema::create('setups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('page_title');
-            $table->string('header_left');
-            $table->string('header_right');
-            $table->string('content_left');
-            $table->string('content_right');
-            $table->string('footer');
-            $table->string('footer_lines');
-            $table->string('active')->default('1')->nullable();
-            $table->string('status')->default('0')->nullable();
+            $table->string('title')->nullable();
+            $table->string('page_title')->nullable();
+            $table->string('header_left')->nullable();
+            $table->string('header_right')->nullable();
+            $table->string('content_left')->nullable();
+            $table->string('content_right')->nullable();
+            $table->string('footer')->nullable();
+            $table->string('footer_lines')->nullable();
+            $table->string('timer_slider_image')->nullable();
+            $table->string('header_social')->nullable();
             $table->timestamps();
         });
     }

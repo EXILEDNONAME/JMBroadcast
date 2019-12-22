@@ -4,8 +4,8 @@
 <link href="/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
 @endpush
 
-@section('page-header', 'PAGE HEADER')
-@section('page-description', 'PAGE DESCRIPTION')
+@section('page-header', 'Video Uploader')
+@section('page-description', '// ...')
 
 @section('content')
 <form action="/dashboard/galleries/uploads/videos/process" method="POST" enctype="multipart/form-data">
