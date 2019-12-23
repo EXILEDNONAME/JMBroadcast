@@ -9,16 +9,16 @@
     <td width="1%" class="text-nowrap align-middle">: </td>
     <td><input class="form-control" name="description" type="text" value="{{ isset($data->description) ? $data->description : old('description')}}" required></td></td>
   </tr>
-  <tr class="form-group {{ $errors->has('description') ? 'has-error' : ''}}">
+  <tr class="form-group {{ $errors->has('sort') ? 'has-error' : ''}}">
     <td width="24%" class="text-nowrap align-middle"> Sort </td>
     <td width="1%" class="text-nowrap align-middle">: </td>
-    <td><input class="form-control" name="sort" type="number" value="{{ isset($data->sort) ? $data->sort : old('sort')}}" required></td>
+    <td><input class="form-control" name="sort" type="number" value="{{ isset($data->sort) ? $data->sort : GetCountContent() }}" required></td>
   </tr>
-  <tr class="form-group {{ $errors->has('phone') ? 'has-error' : ''}}">
+  <tr class="form-group">
     <td width="24%" class="text-nowrap align-middle"> </td>
     <td width="1%" class="text-nowrap align-middle"> </td>
     <td width="75%" class="text-nowrap align-middle">
-      <a href="/dashboard/contents"><button type="cancel" class="btn btn-danger"><i class="fas fa-undo-alt"></i> Back</button></a>
+      <a href="/dashboard/contents" class="btn btn-danger"><i class="fas fa-undo-alt"></i> Back </a>
       <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
     </td>
   </tr>

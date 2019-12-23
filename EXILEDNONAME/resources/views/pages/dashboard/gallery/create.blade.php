@@ -43,11 +43,11 @@
       </select>
     </td>
   </tr>
-  <tr class="form-group {{ $errors->has('order') ? 'has-error' : ''}}">
-    <td width="24%" class="text-nowrap align-middle"> Order </td>
+  <tr class="form-group {{ $errors->has('sort') ? 'has-error' : ''}}">
+    <td width="24%" class="text-nowrap align-middle"> Sort </td>
     <td width="1%" class="text-nowrap align-middle"> : </td>
     <td width="75%">
-      <input type="number" class="form-control" name="sort" value="{{ GetCountContent() }}">
+      <input type="number" class="form-control" name="sort" value="{{ GetCountImage() }}">
     </td>
   </tr>
   <tr class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">

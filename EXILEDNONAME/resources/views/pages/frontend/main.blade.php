@@ -13,13 +13,13 @@
   <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7COswald:300,400,700" rel="stylesheet" type="text/css"><!-- google fonts end -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js">
   </script>
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
   $(document).ready(function(){
     $("#video1").bind('ended', function(){
       location.href="/";
     });
   });
-  </script>
+  </script> -->
 </head>
 <body>
   <div class="preloader-bg"></div>
@@ -188,17 +188,6 @@
 
   setInterval(
     function() {
-      $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/timer_slider_image.php", function(Jam) {
-        var xJam = Jam;
-        var x = document.getElementById('timer_slider_image');
-        x.innerHTML = xJam;
-      });
-    } ,
-    1000
-  );
-
-  setInterval(
-    function() {
       $.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/header_social.php", function(Jam) {
         var xJam = Jam;
         var x = document.getElementById('header_social');
@@ -208,5 +197,10 @@
     1000
   );
   </script>
+  <script type="text/javascript">
+  document.getElementById('video1').addEventListener('ended',function(){
+     window.location.href = '/';
+ },false);
+ </script>
 </body>
 </html>

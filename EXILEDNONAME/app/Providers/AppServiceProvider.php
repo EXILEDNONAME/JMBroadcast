@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
         require_once app_path() . '/Helpers/Defaults.php';
         require_once app_path() . '/Helpers/Dashboard/Image.php';
         require_once app_path() . '/Helpers/Dashboard/Video.php';
+        require_once app_path() . '/Helpers/Dashboard/Content.php';
     }
 
     /**
