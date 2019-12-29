@@ -9,35 +9,36 @@ Website: http://www.seantheme.com/color-admin-v4.0/admin/
     
     <!-- ======== GLOBAL SCRIPT SETTING ======== -->
     01. Handle Scrollbar
-	02. Handle Sidebar - Menu
-	03. Handle Sidebar - Mobile View Toggle
-	04. Handle Sidebar - Minify / Expand
-	05. Handle Page Load - Fade in
-	06. Handle Panel - Remove / Reload / Collapse / Expand
-	07. Handle Panel - Draggable
-	08. Handle Tooltip & Popover Activation
-	09. Handle Scroll to Top Button Activation
-	    
+    
+    02. Handle Sidebar - Menu
+    03. Handle Sidebar - Mobile View Toggle
+    04. Handle Sidebar - Minify / Expand
+    05. Handle Page Load - Fade in
+    06. Handle Panel - Remove / Reload / Collapse / Expand
+    07. Handle Panel - Draggable
+    08. Handle Tooltip & Popover Activation
+    09. Handle Scroll to Top Button Activation
+    
     <!-- ======== Added in V1.2 ======== -->
-    10. Handle Theme & Page Structure Configuration - added in V1.2
-	11. Handle Theme Panel Expand - added in V1.2
-	12. Handle After Page Load Add Class Function - added in V1.2
+    10. Handle Theme & Page Structure Configuration
+    11. Handle Theme Panel Expand
+    12. Handle After Page Load Add Class Function - added in V1.2
     
     <!-- ======== Added in V1.5 ======== -->
     13. Handle Save Panel Position Function - added in V1.5
-	14. Handle Draggable Panel Local Storage Function - added in V1.5
-	15. Handle Reset Local Storage - added in V1.5
+    14. Handle Draggable Panel Local Storage Function - added in V1.5
+    15. Handle Reset Local Storage - added in V1.5
     
     <!-- ======== Added in V1.6 ======== -->
     16. Handle IE Full Height Page Compatibility - added in V1.6
-	17. Handle Unlimited Nav Tabs - added in V1.6
+    17. Handle Unlimited Nav Tabs - added in V1.6
     
     <!-- ======== Added in V1.9 ======== -->
     18. Handle Top Menu - Unlimited Top Menu Render - added in V1.9
-	19. Handle Top Menu - Sub Menu Toggle - added in V1.9
-	20. Handle Top Menu - Mobile Sub Menu Toggle - added in V1.9
-	21. Handle Top Menu - Mobile Top Menu Toggle - added in V1.9
-	22. Handle Clear Sidebar Selection & Hide Mobile Menu - added in V1.9
+    19. Handle Top Menu - Sub Menu Toggle - added in V1.9
+    20. Handle Top Menu - Mobile Sub Menu Toggle - added in V1.9
+    21. Handle Top Menu - Mobile Top Menu Toggle - added in V1.9
+    22. Handle Clear Sidebar Selection & Hide Mobile Menu - added in V1.9
     
     <!-- ======== Added in V4.0 ======== -->
     23. Handle Check Bootstrap Version - added in V4.0
@@ -45,9 +46,7 @@ Website: http://www.seantheme.com/color-admin-v4.0/admin/
 	25. Handle Toggle Navbar Profile - added in V4.0
 	26. Handle Sidebar Scroll Memory - added in V4.0
 	27. Handle Sidebar Minify Sub Menu - added in V4.0
-	28. Handle Ajax Mode - added in V4.0
-	29. Handle Float Navbar Search - added in V4.0
-
+	
     <!-- ======== APPLICATION SETTING ======== -->
     Application Controller
 */
@@ -87,15 +86,13 @@ var generateSlimScroll = function(element) {
 ------------------------------------------------ */
 var handleSidebarMenu = function() {
     "use strict";
-    
-    var expandTime = ($('.sidebar').attr('data-disable-slide-animation')) ? 0 : 250;
     $('.sidebar .nav > .has-sub > a').click(function() {
         var target = $(this).next('.sub-menu');
         var otherMenu = $('.sidebar .nav > li.has-sub > .sub-menu').not(target);
     
         if ($('.page-sidebar-minified').length === 0) {
         	$(otherMenu).closest('li').addClass('closing');
-            $(otherMenu).slideUp(expandTime, function() {
+            $(otherMenu).slideUp(250, function() {
                 $(otherMenu).closest('li').addClass('closed').removeClass('expand closing');
             });
             if ($(target).is(':visible')) {
@@ -103,7 +100,7 @@ var handleSidebarMenu = function() {
             } else {
             	$(target).closest('li').addClass('expanding').removeClass('closed');
             }
-            $(target).slideToggle(expandTime, function() {
+            $(target).slideToggle(250, function() {
                 var targetLi = $(this).closest('li');
                 if (!$(target).is(':visible')) {
                     $(targetLi).addClass('closed');
@@ -124,7 +121,7 @@ var handleSidebarMenu = function() {
             } else {
             	$(target).closest('li').addClass('expanding').removeClass('closed');
             }
-            $(target).slideToggle(expandTime, function() {
+            $(target).slideToggle(250, function() {
                 var targetLi = $(this).closest('li');
                 if (!$(target).is(':visible')) {
                     $(targetLi).addClass('closed');
@@ -424,21 +421,13 @@ var handelTooltipPopoverActivation = function() {
 ------------------------------------------------ */
 var handleScrollToTopButton = function() {
     "use strict";
-    var bootstrapVersion = handleCheckBootstrapVersion();
-    var showClass = '';
-    
-    if (bootstrapVersion == '3.3.7') {
-    	showClass = 'in';
-	} else if (bootstrapVersion == '4.0.0') {
-    	showClass = 'show';
-	}
     $(document).scroll( function() {
         var totalScroll = $(document).scrollTop();
 
         if (totalScroll >= 200) {
-            $('[data-click=scroll-top]').addClass(showClass);
+            $('[data-click=scroll-top]').addClass('in');
         } else {
-            $('[data-click=scroll-top]').removeClass(showClass);
+            $('[data-click=scroll-top]').removeClass('in');
         }
     });
 
@@ -721,14 +710,14 @@ var handleResetLocalStorage = function() {
         '    <div class="modal-dialog">'+
         '        <div class="modal-content">'+
         '            <div class="modal-header">'+
-        '                <h4 class="modal-title"><i class="fa fa-redo m-r-5"></i> Reset Local Storage Confirmation</h4>'+
         '                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>'+
+        '                <h4 class="modal-title"><i class="fa fa-refresh m-r-5"></i> Reset Local Storage Confirmation</h4>'+
         '            </div>'+
         '            <div class="modal-body">'+
         '                <div class="alert alert-info m-b-0">Would you like to RESET all your saved widgets and clear Local Storage?</div>'+
         '            </div>'+
         '            <div class="modal-footer">'+
-        '                <a href="javascript:;" class="btn btn-sm btn-default" data-dismiss="modal"><i class="fa fa-times"></i> No</a>'+
+        '                <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal"><i class="fa fa-close"></i> No</a>'+
         '                <a href="javascript:;" class="btn btn-sm btn-inverse" data-click="confirm-reset-local-storage"><i class="fa fa-check"></i> Yes</a>'+
         '            </div>'+
         '        </div>'+
@@ -1116,8 +1105,6 @@ var handlePageScrollClass = function() {
 /* 25. Handle Toggle Navbar Profile - added in V4.0
 ------------------------------------------------ */
 var handleToggleNavProfile = function() {
-    var expandTime = ($('.sidebar').attr('data-disable-slide-animation')) ? 0 : 250;
-    
     $('[data-toggle="nav-profile"]').click(function(e) {
         e.preventDefault();
         
@@ -1136,7 +1123,7 @@ var handleToggleNavProfile = function() {
             $(targetLi).addClass(targetClass);
             $(targetProfile).addClass(targetExpandingClass);
         }
-        $(targetProfile).slideToggle(expandTime, function() {
+        $(targetProfile).slideToggle(250, function() {
         	if (!$(targetProfile).is(':visible')) {
 				$(targetProfile).addClass(targetClosedClass);
 				$(targetProfile).removeClass(targetExpandClass);
@@ -1299,8 +1286,9 @@ var handleSidebarMinifyFloatMenu = function() {
 };
 
 
-/* 28. Handle Ajax Mode - added in V4.0
+/* 19. Handle Ajax Mode - added in V4.0
 ------------------------------------------------ */
+
 var CLEAR_OPTION = '';
 var handleAjaxMode = function(setting) {
 	var emptyHtml = (setting.emptyHtml) ?  setting.emptyHtml : '<div class="p-t-40 p-b-40 text-center f-s-20 content"><i class="fa fa-warning fa-lg text-muted m-r-5"></i> <span class="f-w-600 text-inverse">Error 404! Page not found.</span></div>';
@@ -1351,22 +1339,9 @@ var handleAjaxMode = function(setting) {
 		}
 	}
 	
-	function checkLoading(load) {
-		if (!load) {
-			if ($('#page-content-loader').length === 0) {
-				$('body').addClass('page-content-loading');
-				$('#content').append('<div id="page-content-loader"><span class="spinner"></span></div>');
-			}
-		} else {
-			$('#page-content-loader').remove();
-			$('body').removeClass('page-content-loading');
-		}
-	}
-	
 	function renderAjax(url, elm, disablePushState) {
 		Pace.restart();
 		
-		checkLoading(false);
 		clearElement();
 		checkSidebarActive(url);
 		checkClearOption();
@@ -1394,7 +1369,6 @@ var handleAjaxMode = function(setting) {
 				$(targetContainer).html(emptyHtml);
 			}
 		}).done(function() {
-			checkLoading(true);
 			$('html, body').animate({ scrollTop: 0 }, 0);
 			App.initComponent();
 		});
@@ -1411,6 +1385,7 @@ var handleAjaxMode = function(setting) {
 		renderAjax($(this).attr('href'), this);
 	});
 };
+
 var handleSetPageOption = function(option) {
 	if (option.pageContentFullHeight) {
 		$('#page-container').addClass('page-content-full-height');
@@ -1443,6 +1418,7 @@ var handleSetPageOption = function(option) {
 		CLEAR_OPTION = option;
 	}
 };
+
 var handleClearPageOption = function(option) {
 	if (option.pageContentFullHeight) {
 		$('#page-container').removeClass('page-content-full-height');
@@ -1471,21 +1447,6 @@ var handleClearPageOption = function(option) {
 	if (option.pageBoxedLayout) {
 		$('body').removeClass('boxed-layout');
 	}
-};
-
-
-/* 29. Handle Float Navbar Search - added in V4.0
------------------------------------------------- */
-var handleToggleNavbarSearch = function() {
-    $('[data-toggle="navbar-search"]').click(function(e) {
-        e.preventDefault();
-        $('.header').addClass('header-search-toggled');
-    });
-    
-    $('[data-dismiss="navbar-search"]').click(function(e) {
-        e.preventDefault();
-        $('.header').removeClass('header-search-toggled');
-    });
 };
 
 
@@ -1549,7 +1510,6 @@ var App = function () {
 			handleAfterPageLoadAddClass();
 			handlePageScrollClass();
 			handleToggleNavProfile();
-			handleToggleNavbarSearch();
 		},
 		initLocalStorage: function() {
 		    handleLocalStorage();

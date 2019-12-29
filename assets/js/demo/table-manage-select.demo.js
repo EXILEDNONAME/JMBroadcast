@@ -16,7 +16,7 @@ var handleDataTableSelect = function() {
     }
 };
 
-var TableManageTableSelect = function () {
+var TableManageSelect = function () {
 	"use strict";
     return {
         //main function

@@ -307,6 +307,7 @@ var FormPlugins = function () {
 			handleBootstrapCombobox();
 			handleSelectpicker();
 			handleTagsInput();
+			
 			handleJqueryTagIt();
 			handleDateRangePicker();
 			handleSelect2();

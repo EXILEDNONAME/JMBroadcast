@@ -110,6 +110,13 @@ For data attributes, append the option name to `data-`, as in `data-message="Sho
             <td>glyphicon-eye-close</td>
             <td>Close eye icon class.</td>
         </tr>
+        <tr>
+            <td>eyeClassPositionInside</td>
+            <td>data-eye-class-position-inside</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>Puts the open/close class inside the &lt;i>. Use this option with google material icons.</td>
+        </tr>
 
     </tbody>
 </table>
@@ -154,6 +161,10 @@ $('#password').password('val'); // get value
 $('#password').password('val', 'password'); // set value
 ```
 
+### .password('focus')
+
+Focus the password input.
+
 ## Events
 
 The plugin exposes a few events.
@@ -195,9 +206,17 @@ Your feedback is very appreciated!
 
 ## CHANGELOG
 
+### 1.1.1
+
+* Add `focus` method.
+
+### 1.1.0
+
+* Add support for google material design icons, by usgin the ```data-eye-class-position-inside``` property.
+
 ### 1.0.3
 
-* Add `eyeClass`, `eyeOpenClass`, `eyeCloseClass` to use custom font (for example Font Awesome) instead of Bootstrap's default Glyphicon. 
+* Add `eyeClass`, `eyeOpenClass`, `eyeCloseClass` to use custom font (for example Font Awesome) instead of Bootstrap's default Glyphicon.
 
 ### 1.0.2
 

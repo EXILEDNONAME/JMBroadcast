@@ -1,9 +1,10 @@
 <?php
-
-
-// Route::get('/', function () { return view('pages.frontend.index'); });
 Route::get('/', 'Frontend\HomeController@index');
 Route::get('/main', 'Frontend\HomeController@main');
+
+Route::get('/video-1', 'Frontend\HomeController@video_1');
+Route::get('/video-2', 'Frontend\HomeController@video_2');
+Route::get('/video-3', 'Frontend\HomeController@video_3');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -20,6 +21,15 @@ Route::get('/dashboard/galleries/active_image/{id}', 'Dashboard\GalleriesControl
 Route::get('/dashboard/galleries/active_video/{id}', 'Dashboard\GalleriesController@active_video');
 Route::get('/dashboard/galleries/nonactive_image/{id}', 'Dashboard\GalleriesController@nonactive_image');
 Route::get('/dashboard/galleries/nonactive_video/{id}', 'Dashboard\GalleriesController@nonactive_video');
+Route::resource('/dashboard/galleries', 'Dashboard\\GalleriesController');
+
+Route::get('/dashboard/galleries/set_image_1/{id}', 'Dashboard\GalleriesController@set_image_1');
+Route::get('/dashboard/galleries/set_image_2/{id}', 'Dashboard\GalleriesController@set_image_2');
+
+Route::get('/dashboard/galleries/set_video_1/{id}', 'Dashboard\GalleriesController@set_video_1');
+Route::get('/dashboard/galleries/set_video_2/{id}', 'Dashboard\GalleriesController@set_video_2');
+Route::get('/dashboard/galleries/set_video_3/{id}', 'Dashboard\GalleriesController@set_video_3');
+Route::get('/dashboard/galleries/set_video_disable/{id}', 'Dashboard\GalleriesController@set_video_disable');
 
 // DASHBOARD -- IMAGES
 Route::get('/dashboard/galleries/uploads/images', 'Dashboard\ImagesController@upload');

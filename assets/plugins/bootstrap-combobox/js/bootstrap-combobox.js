@@ -1,5 +1,5 @@
 /* =============================================================
- * bootstrap-combobox.js v1.1.7
+ * bootstrap-combobox.js v1.1.8
  * =============================================================
  * Copyright 2012 Daniel Farrell
  *
@@ -16,7 +16,7 @@
  * limitations under the License.
  * ============================================================ */
 
-!function( $ ) {
+(function( $ ) {
 
  "use strict";
 
@@ -178,9 +178,9 @@
 
   , template: function() {
       if (this.options.bsVersion == '2') {
-        return '<div class="combobox-container"><input type="hidden" /> <div class="input-append"> <input type="text" autocomplete="false" /> <span class="add-on dropdown-toggle" data-dropdown="dropdown"> <span class="caret"/> <i class="icon-remove"/> </span> </div> </div>'
+        return '<div class="combobox-container"><input type="hidden" /> <div class="input-append"> <input type="text" autocomplete="off" /> <span class="add-on dropdown-toggle" data-dropdown="dropdown"> <span class="caret"/> <i class="icon-remove"/> </span> </div> </div>'
       } else {
-        return '<div class="combobox-container"> <input type="hidden" /> <div class="input-group"> <input type="text" autocomplete="false" /> <span class="input-group-addon dropdown-toggle" data-dropdown="dropdown"> <span class="caret" /> <span class="glyphicon glyphicon-remove" /> </span> </div> </div>'
+        return '<div class="combobox-container"> <input type="hidden" /> <div class="input-group"> <input type="text" autocomplete="off" /> <span class="input-group-addon dropdown-toggle" data-dropdown="dropdown"> <span class="caret" /> <span class="glyphicon glyphicon-remove" /> </span> </div> </div>'
       }
     }
 
@@ -452,11 +452,11 @@
   };
 
   $.fn.combobox.defaults = {
-    bsVersion: '3'
+    bsVersion: '4'
   , menu: '<ul class="typeahead typeahead-long dropdown-menu"></ul>'
-  , item: '<li><a href="#"></a></li>'
+  , item: '<li><a href="#" class="dropdown-item"></a></li>'
   };
 
   $.fn.combobox.Constructor = Combobox;
 
-}( window.jQuery );
+}( window.jQuery ));

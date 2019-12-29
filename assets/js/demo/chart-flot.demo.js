@@ -27,7 +27,8 @@ var handleBasicChart = function () {
 		d3.push([z, Math.tan(z)]);
 	}
 	if ($('#basic-chart').length !== 0) {
-        $.plot($('#basic-chart'), [
+		var placeholder = document.getElementById('basic-chart');
+        var basicChart = new Plot(placeholder , [
             { label: 'data 1',  data: d1, color: COLOR_BLUE, shadowSize: 0 },
             { label: 'data 2',  data: d2, color: COLOR_GREEN, shadowSize: 0 }
         ], {
@@ -113,7 +114,8 @@ var handleStackedChart = function () {
 		bars: { fillColor: COLOR_AQUA }
 	}];
 	
-    $.plot('#stacked-chart', xData, { 
+	var placeholder = document.getElementById('stacked-chart');
+    var stackedBarChart = new Plot(placeholder, xData, { 
         xaxis: {  
         	tickColor: COLOR_GREY_LIGHTER,  
         	ticks: [[0, 'MON'], [1, 'TUE'], [2, 'WED'], [3, 'THU'], [4, 'FRI'], [5, 'SAT']],
@@ -143,7 +145,7 @@ var handleStackedChart = function () {
     var previousXValue = null;
     var previousYValue = null;
     
-    $('#stacked-chart').bind('plothover', function (event, pos, item) {
+    stackedBarChart.bind('plothover', function (event, pos, item) {
         if (item) {
             var y = item.datapoint[1] - item.datapoint[2];
             
@@ -175,7 +177,7 @@ var handleTrackingChart = function () {
         updateLegendTimeout = null;
         
         var pos = latestPosition;
-        var axes = plot.getAxes();
+        var axes = trackingChart.getAxes();
         if (pos.x < axes.xaxis.min || pos.x > axes.xaxis.max || pos.y < axes.yaxis.min || pos.y > axes.yaxis.max) {
             return;
         }
@@ -200,7 +202,8 @@ var handleTrackingChart = function () {
         }
     }
 	if ($('#tracking-chart').length !== 0) {
-        var plot = $.plot($('#tracking-chart'), [ 
+		var placeholder = document.getElementById('tracking-chart');
+        var trackingChart = new Plot(placeholder, [ 
             { data: sin, label: 'Series1', color: COLOR_BLACK_LIGHTER, shadowSize: 0},
             { data: cos, label: 'Series2', color: COLOR_BLUE, shadowSize: 0} 
         ], {
@@ -230,7 +233,7 @@ var handleTrackingChart = function () {
         var updateLegendTimeout = null;
         var latestPosition = null;
         
-        $('#tracking-chart').bind('plothover',  function (pos) {
+        trackingChart.bind('plothover',  function (pos) {
             latestPosition = pos;
             if (!updateLegendTimeout) {
                 updateLegendTimeout = setTimeout(updateLegend, 50);
@@ -244,7 +247,8 @@ var handleBarChart = function () {
 	if ($('#bar-chart').length !== 0) {
         var data = [[0, 10], [1, 8], [2, 4], [3, 13], [4, 17], [5, 9]];
         var ticks = [[0, 'JAN'], [1, 'FEB'], [2, 'MAR'], [3, 'APR'], [4, 'MAY'], [5, 'JUN']];
-        $.plot('#bar-chart', [{ label: 'Bounce Rate', data: data, color: COLOR_BLACK_LIGHTER }], {
+        var placeholder = document.getElementById('bar-chart');
+        var barChart = new Plot(placeholder, [{ label: 'Bounce Rate', data: data, color: COLOR_BLACK_LIGHTER }], {
             series: {
                 bars: {
                     show: true,
@@ -282,7 +286,8 @@ var handleInteractivePieChart = function () {
         {
             data[i] = { label: 'Series'+(i+1), data: Math.floor(Math.random()*100)+1, color: colorArray[i]};
         }
-        $.plot($('#interactive-pie-chart'), data, {
+        var placeholder = document.getElementById('interactive-pie-chart');
+        var interactivePieChart = new Plot(placeholder, data, {
             series: {
                 pie: { 
                     show: true
@@ -293,7 +298,7 @@ var handleInteractivePieChart = function () {
                 clickable: true
             }
         });
-        $('#interactive-pie-chart').bind('plotclick', function(event, pos, obj) {
+       interactivePieChart.bind('plotclick', function(event, pos, obj) {
 			if (!obj) {
 				return;
 			}
@@ -316,7 +321,8 @@ var handleDonutChart = function () {
             data[i] = { label: nameArray[i], data: dataArray[i], color: colorArray[i] };
         }
         
-        $.plot($('#donut-chart'), data, 
+        var placeholder = document.getElementById('donut-chart');
+        var donutChart = new Plot(placeholder, data, 
         {
             series: {
                 pie: { 
@@ -342,7 +348,9 @@ var handleInteractiveChart = function () {
         var d1 = [[0, 42], [1, 53], [2,66], [3, 60], [4, 68], [5, 66], [6,71],[7, 75], [8, 69], [9,70], [10, 68], [11, 72], [12, 78], [13, 86]];
         var d2 = [[0, 12], [1, 26], [2,13], [3, 18], [4, 35], [5, 23], [6, 18],[7, 35], [8, 24], [9,14], [10, 14], [11, 29], [12, 30], [13, 43]];
         
-        $.plot($('#interactive-chart'), [{
+        var placeholder = document.getElementById('interactive-chart');
+        
+        var interactiveChart = new Plot(placeholder, [{
 				data: d1, 
 				label: 'Page Views', 
 				color: COLOR_BLUE,
@@ -375,7 +383,7 @@ var handleInteractiveChart = function () {
 		});
 		
         var previousPoint = null;
-        $('#interactive-chart').bind('plothover', function (event, pos, item) {
+        interactiveChart.bind('plothover', function (event, pos, item) {
             $('#x').text(pos.x.toFixed(2));
             $('#y').text(pos.y.toFixed(2));
             if (item) {
@@ -400,8 +408,8 @@ var handleLiveUpdatedChart = function () {
 	'use strict';
         
     function update() {
-        plot.setData([ getRandomData() ]);
-        plot.draw();
+        liveUpdatedChart.setData([ getRandomData() ]);
+        liveUpdatedChart.draw();
         setTimeout(update, updateInterval);
     }
     
@@ -445,7 +453,9 @@ var handleLiveUpdatedChart = function () {
             }
         });
         
-        var plot = $.plot($('#live-updated-chart'), [{ label: 'Server stats', data: getRandomData() }], {
+        var placeholder = document.getElementById('live-updated-chart');
+        
+        var liveUpdatedChart = new Plot(placeholder, [{ label: 'Server stats', data: getRandomData() }], {
             series: { 
             	shadowSize: 0, 
             	color: COLOR_GREEN, 

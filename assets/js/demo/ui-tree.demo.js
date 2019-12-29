@@ -166,7 +166,7 @@ var handleJstreeAjax = function() {
             "check_callback": true,
             'data': {
                 'url': function (node) {
-                    return node.id === '#' ? '../assets/plugins/jstree/demo/data_root.json': '../assets/plugins/jstree/demo/' + node.original.file;
+                    return node.id === '#' ? '/assets/js/demo/json/data_root.json': '/assets/js/demo/json/' + node.original.file;
                 },
                 'data': function (node) {
                     return { 'id': node.id };

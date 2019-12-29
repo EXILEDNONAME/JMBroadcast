@@ -16,7 +16,7 @@ var handleSuperboxGallery = function() {
 };
 
 
-var GalleryV2 = function () {
+var Gallery = function () {
 	"use strict";
     return {
         //main function
