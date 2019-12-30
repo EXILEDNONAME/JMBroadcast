@@ -65,10 +65,10 @@
   <div id="backgroundvideo">
     @if ( count($data2) != false )
     @foreach ( $data2 as $item )
-    <video id="video1" class="video-js vjs-default-skin" preload="auto" width="100%" src="EXILEDNONAME/files/{{ $item->file }}" poster="http://kinetika.imaginem.co/wp-content/uploads/sites/8/revslider/fullscreenrevslider/explore.jpg" autoplay muted></video>
+    <video id="video1" class="video-js vjs-default-skin" preload="auto" width="100%" src="EXILEDNONAME/files/{{ $item->file }}" autoplay muted></video>
     @endforeach
     @else
-    <video id="video1" class="video-js vjs-default-skin" preload="auto" width="100%" src="EXILEDNONAME/files/404.mkv" poster="http://kinetika.imaginem.co/wp-content/uploads/sites/8/revslider/fullscreenrevslider/explore.jpg" autoplay muted></video>
+    <video id="video1" class="video-js vjs-default-skin" preload="auto" width="100%" src="EXILEDNONAME/files/404.mkv" autoplay muted></video>
     @endif
   </div>
 </div>
