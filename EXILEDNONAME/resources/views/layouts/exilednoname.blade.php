@@ -10,7 +10,7 @@
     @include('includes.header')
 		@include('includes.sidebar')
 		<div id="content" class="content">
-			@include('includes.components.breadcrumb')
+			<!-- @include('includes.components.breadcrumb') -->
 			<h1 class="page-header"> @yield('page-header') <small> @yield('page-description') </small></h1>
 			<div class="panel panel-inverse">
 				<div class="panel-heading">
