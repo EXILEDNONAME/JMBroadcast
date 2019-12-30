@@ -14,6 +14,7 @@
 	@else {{ $data3->timer_slider_image }}
 	@endif ; URL='/video-1'" />
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<link rel="shortcut icon" href="/assets/img/jasamarga-ico.png" width="15px" height="15px">
 	<link href="http://www.11-76.com/themes/the-one-responsive/css/plugins.css" media="all" rel="stylesheet" type="text/css">
 	<link href="http://www.11-76.com/themes/the-one-responsive/css/style.css" media="all" rel="stylesheet" type="text/css"><!-- style end -->
 	<script type="text/javascript" src="/assets/js/frontend/jquery-1.4.2.min.js"></script>

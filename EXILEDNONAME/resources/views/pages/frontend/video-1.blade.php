@@ -6,6 +6,7 @@
   <title> {{ $data3->title }} </title>
   <link rel='stylesheet' id='MainStyle-css' href='/assets/css/frontend/style.css' type='text/css' media='all' />
   <link rel='stylesheet' id='MainStyle-Light-css' href='/assets/css/frontend/style-light.css' type='text/css' media='all' />
+  <link rel="shortcut icon" href="/assets/img/jasamarga-ico.png" width="15px" height="15px">
   <script type='text/javascript' src='/assets/js/frontend/jquery.js'></script>
   <script type='text/javascript' src='/assets/js/frontend/jquery-migrate.min.js'></script>
   <script type='text/javascript' src='/assets/js/frontend/pace.min.js'></script>

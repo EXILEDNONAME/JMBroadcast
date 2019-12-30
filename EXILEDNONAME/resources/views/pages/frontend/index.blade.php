@@ -8,6 +8,7 @@
 	@else {{ $data3->timer_slider_image }}
 	@endif ; URL='/main'" />
 	<title> {{ $data3->title }} </title>
+	<link rel="shortcut icon" href="/assets/img/jasamarga-ico.png" width="15px" height="15px">
 
 	<link rel='stylesheet' id='MainStyle-css' href='/assets/theme/frontend/style.css' type='text/css' />
 	<link rel='stylesheet' id='verticalmenuCSS-css' href='/assets/theme/frontend/verticalmenu.css' type='text/css' />
