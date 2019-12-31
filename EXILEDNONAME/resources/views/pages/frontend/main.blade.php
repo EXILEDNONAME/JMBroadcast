@@ -15,8 +15,8 @@
 	@endif ; URL='/video-1'" />
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 	<link rel="shortcut icon" href="/assets/img/jasamarga-ico.png" width="15px" height="15px">
-	<link href="http://www.11-76.com/themes/the-one-responsive/css/plugins.css" media="all" rel="stylesheet" type="text/css">
-	<link href="http://www.11-76.com/themes/the-one-responsive/css/style.css" media="all" rel="stylesheet" type="text/css"><!-- style end -->
+	<link href="/assets/theme/frontend/main/plugins.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/assets/theme/frontend/main/style.css" media="all" rel="stylesheet" type="text/css"><!-- style end -->
 	<script type="text/javascript" src="/assets/js/frontend/jquery-1.4.2.min.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7COswald:300,400,700" rel="stylesheet" type="text/css"><!-- google fonts end -->
 </head>
@@ -52,7 +52,7 @@
 		<div class="hero-fullscreen">
 			<div class="hero-bg">
 				<div class="swiper-container swiper-slider-top-thumbs-vertical">
-					<div class="swiper-wrapper">
+					<div class="swiper-wrapper" style="background-color: #fff">
 						@foreach ( $data1 as $item )
 						<div class="swiper-slide overlay cover-all" style="background-image: url('EXILEDNONAME/files/{{ $item->file }}')"></div>
 						@endforeach
@@ -61,7 +61,7 @@
 					<div class="swiper-button-prev swiper-button-white"></div>
 				</div>
 
-				<div class="swiper-container swiper-slider-bottom-thumbs-vertical">
+				<div class="swiper-container swiper-slider-bottom-thumbs-vertical" style="background-color: #fff">
 					<div class="swiper-wrapper">
 						@foreach ( $data1 as $item )
 						<div class="swiper-slide" style="background-image: url('EXILEDNONAME/files/{{ $item->file }}')"></div>
@@ -72,8 +72,8 @@
 		</div>
 	</div>
 	<script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
-	<script src="http://www.11-76.com/themes/the-one-responsive/js/plugins.js" type="text/javascript"></script>
-	<script src="http://www.11-76.com/themes/the-one-responsive/js/the-one.js" type="text/javascript"></script><!-- scripts end -->
+	<script src="/assets/theme/frontend/main/plugins.js" type="text/javascript"></script>
+	<script src="/assets/theme/frontend/main/exilednoname.js" type="text/javascript"></script><!-- scripts end -->
 
 	<script>
 	// AUTO REFRESH FOOTER LINES
