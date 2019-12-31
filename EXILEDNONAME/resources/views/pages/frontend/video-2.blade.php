@@ -78,7 +78,7 @@
 <footer>
   <div class="fullscreen-footer-wrap" style="background: rgba(0,0,0,0.5);">
     <marquee scrolldelay="125" width="100%">
-      <font font size="4"><span id="footer_lines"></span></font>
+      <font font size="4" style="color: #fff"><span id="footer_lines"></span></font>
     </marquee>
   </div>
 </footer>
