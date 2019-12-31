@@ -204,7 +204,7 @@ setInterval(
 			x.innerHTML = xJam;
 		});
 	} ,
-	1000
+	3000
 );
 </script>
 

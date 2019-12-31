@@ -85,7 +85,7 @@
 				x.innerHTML = xJam;
 			});
 		} ,
-		1000
+		3000
 	);
 
 	// AUTO REFRESH CONTENT RIGHT
@@ -97,7 +97,7 @@
 				x.innerHTML = xJam;
 			});
 		} ,
-		1000
+		3000
 	);
 
 	// AUTO REFRESH FOOTER
@@ -109,7 +109,7 @@
 				x.innerHTML = xJam;
 			});
 		} ,
-		1000
+		3000
 	);
 
 	// AUTO REFRESH FOOTER LINES
@@ -121,7 +121,7 @@
 				x.innerHTML = xJam;
 			});
 		} ,
-		1000
+		3000
 	);
 	</script>
 </body>

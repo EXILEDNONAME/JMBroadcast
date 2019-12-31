@@ -76,9 +76,9 @@
 <div class="contentclearfix clearfix"></div>
 </div>
 <footer>
-  <div class="fullscreen-footer-wrap">
+  <div class="fullscreen-footer-wrap" style="background: rgba(0,0,0,0.5);">
     <marquee scrolldelay="125" width="100%">
-      <font font size="4"><span id="footer_lines"></span></font>
+      <font font size="3"><span id="footer_lines"></span></font>
     </marquee>
   </div>
 </footer>
@@ -106,7 +106,7 @@ setInterval(
       x.innerHTML = xJam;
     });
   } ,
-  1000
+  3000
 );
 </script>
 </body>
