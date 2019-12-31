@@ -20,11 +20,11 @@
 	<script type="text/javascript" src="/assets/js/frontend/jquery-1.4.2.min.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7COswald:300,400,700" rel="stylesheet" type="text/css"><!-- google fonts end -->
 </head>
-<body>
-	<div class="preloader-bg"></div>
-	<div id="preloader">
+<body class="body-light">
+	<div class="preloader-bg preloader-bg-light"></div>
+	<div class="preloader-light" id="preloader">
 		<div id="preloader-status">
-			<div class="preloader-position loader">
+			<div class="preloader-position loader loader-light">
 				<span></span>
 			</div>
 		</div>
