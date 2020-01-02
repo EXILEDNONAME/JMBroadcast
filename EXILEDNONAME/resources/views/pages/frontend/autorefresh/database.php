@@ -1,3 +1,3 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "jmbroadcast");
+$conn = new mysqli("localhost", "root", "", "jasamarga");
 ?>
