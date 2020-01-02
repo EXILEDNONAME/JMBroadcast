@@ -85,7 +85,7 @@
 				x.innerHTML = xJam;
 			});
 		} ,
-		3000
+		1000
 	);
 
 	// AUTO REFRESH CONTENT RIGHT
