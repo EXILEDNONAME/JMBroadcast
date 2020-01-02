@@ -37,6 +37,11 @@
 
 
 	<style>
+	.footer_h {
+		bottom : 0
+		color:red;
+		position: bottom;
+	}
 	.bord {
 		border-radius: 25px 25px 25px 25px;
 		-moz-border-radius: 25px 25px 25px 25px;
@@ -77,7 +82,7 @@
 		<div class="vertical-logo-wrap">
 			<a href="http://kinetika.imaginem.co?menu_type=vertical">
 				<center>
-					<img class="vertical-logoimage" src="/assets/img/logo.png" alt="logo" width="50%" /></img>
+					<img class="vertical-logoimage" src="/assets/img/logo.png" alt="logo" width="100%" /></img>
 				</center>
 			</a>
 		</div>
@@ -92,10 +97,12 @@
 			</nav>
 		</marquee>
 
+		<div class="footer_h">
 		<center>
-			<img src="/assets/img/apic.png" width="50%" /></img>
+			<img src="/assets/img/apic.png" width="100%" /></img>
 			<div id="time"></div>
 		</center>
+		</div>
 	</div>
 
 	<div id="home" class="container-wrapper container-fullwidth">
