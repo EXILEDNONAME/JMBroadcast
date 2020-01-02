@@ -103,4 +103,9 @@ class ImagesController extends Controller {
     return redirect('dashboard/contents')->with('success', 'Success, setting as default content to slider.');
   }
 
+  public function slide_1(){
+    $data = Image::all();
+    return view('pages.dashboard.setup.slide-1.index', compact('data'));
+  }
+
 }

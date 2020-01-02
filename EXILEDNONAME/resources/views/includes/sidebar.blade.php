@@ -55,7 +55,7 @@
       </li>
       <!-- // CONTENTS -->
 
-      <!-- SET-UP -->
+      <!-- CONTENTS -->
       <li class="has-sub {{ (request()->is('dashboard/contents*')) ? 'active' : '' }}">
         <a href="javascript:;">
           <b class="caret"></b>
@@ -77,6 +77,78 @@
         </a>
       </li>
       <!-- // SETUPS -->
+
+      <!-- CONTENTS -->
+      <li class="has-sub {{ (request()->is('dashboard/setups*')) ? 'active' : '' }}">
+        <a href="javascript:;">
+          <b class="caret"></b>
+          <i class="fa fa-table"></i>
+          <span> Setups </span>
+        </a>
+        <ul class="sub-menu">
+
+          <!-- SLIDE 1 -->
+          <li class="has-sub {{ (request()->is('dashboard/setups/slide-1*')) ? 'active' : '' }}">
+            <a href="javascript:;">
+              <b class="caret"></b>
+              <span> Slider 1 </span>
+            </a>
+            <ul class="sub-menu">
+              <li class="{{ (request()->is('dashboard/setups/slide-1')) ? 'active' : '' }}"><a href="/dashboard/setups/slide-1"> Main Index </a></li>
+              <li class="{{ (request()->is('dashboard/setups/slide-1/upload')) ? 'active' : '' }}"><a href="/dashboard/setups/slide-1/upload"> Uploader Slide 1 </a></li>
+            </ul>
+          </li>
+
+          <!-- SLIDE 2 -->
+          <li class="has-sub {{ (request()->is('dashboard/setups/slide-2*')) ? 'active' : '' }}">
+            <a href="javascript:;">
+              <b class="caret"></b>
+              <span> Slider 2 </span>
+            </a>
+            <ul class="sub-menu">
+              <li class="{{ (request()->is('dashboard/setups/slide-2')) ? 'active' : '' }}"><a href="/dashboard/setups/slide-2"> Main Index </a></li>
+              <li class="{{ (request()->is('dashboard/setups/slide-2/upload')) ? 'active' : '' }}"><a href="/dashboard/setups/slide-2/upload"> Uploader Slide 2 </a></li>
+            </ul>
+          </li>
+
+          <!-- VIDEO 1 -->
+          <li class="has-sub {{ (request()->is('dashboard/setups/video-1*')) ? 'active' : '' }}">
+            <a href="javascript:;">
+              <b class="caret"></b>
+              <span> Video 1 </span>
+            </a>
+            <ul class="sub-menu">
+              <li class="{{ (request()->is('dashboard/setups/video-1')) ? 'active' : '' }}"><a href="/dashboard/setups/video-1"> Main Index </a></li>
+              <li class="{{ (request()->is('dashboard/setups/video-1/upload')) ? 'active' : '' }}"><a href="/dashboard/setups/video-1/upload"> Uploader Video 1 </a></li>
+            </ul>
+          </li>
+
+          <!-- VIDEO 2 -->
+          <li class="has-sub {{ (request()->is('dashboard/setups/video-2*')) ? 'active' : '' }}">
+            <a href="javascript:;">
+              <b class="caret"></b>
+              <span> Video 2 </span>
+            </a>
+            <ul class="sub-menu">
+              <li class="{{ (request()->is('dashboard/setups/video-2')) ? 'active' : '' }}"><a href="/dashboard/setups/video-2"> Main Index </a></li>
+              <li class="{{ (request()->is('dashboard/setups/video-2/upload')) ? 'active' : '' }}"><a href="/dashboard/setups/video-2/upload"> Uploader Video 2 </a></li>
+            </ul>
+          </li>
+
+          <!-- VIDEO 3 -->
+          <li class="has-sub {{ (request()->is('dashboard/setups/video-3*')) ? 'active' : '' }}">
+            <a href="javascript:;">
+              <b class="caret"></b>
+              <span> Video 3 </span>
+            </a>
+            <ul class="sub-menu">
+              <li class="{{ (request()->is('dashboard/setups/video-3')) ? 'active' : '' }}"><a href="/dashboard/setups/video-3"> Main Index </a></li>
+              <li class="{{ (request()->is('dashboard/setups/video-3/upload')) ? 'active' : '' }}"><a href="/dashboard/setups/video-3/upload"> Uploader Video 3 </a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <!-- // CONTENTS -->
 
       <ul class="nav">
         <li class="nav-header"> System </li>
