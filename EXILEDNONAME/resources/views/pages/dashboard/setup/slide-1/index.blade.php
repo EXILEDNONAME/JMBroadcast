@@ -4,8 +4,8 @@
 <link href="/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
 @endpush
 
-@section('page-header', 'All Galleries')
-@section('page-description', '// Show Your Galleries ...')
+@section('page-header', 'Slide 1')
+@section('page-description', '// Index From Slide 1 ...')
 
 @section('content')
 <div class="table-responsive">

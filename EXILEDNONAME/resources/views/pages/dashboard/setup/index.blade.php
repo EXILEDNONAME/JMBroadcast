@@ -4,7 +4,7 @@
 <link href="/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
 @endpush
 
-@section('page-header', 'Setup Pages')
+@section('page-header', 'General Setups')
 @section('page-description', '// ...')
 
 @section('content')

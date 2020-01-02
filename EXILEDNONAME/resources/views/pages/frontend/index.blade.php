@@ -66,7 +66,7 @@
 	}
 	</style>
 </head>
-<body class="home blog woocommerce-no-js single-author theme-is-light demo menu-is-vertical page-is-fullscreen fullscreen-slideshow has-fullscreen-eventbox theme-fullwidth body-dashboard-push footer-is-on">
+<body class="home blog woocommerce-no-js single-author demo menu-is-vertical page-is-fullscreen">
 
 	<div id="dimmer">
 		<div class="dimmer-outer">
@@ -82,11 +82,11 @@
 		<div class="vertical-logo-wrap">
 			<a href="http://kinetika.imaginem.co?menu_type=vertical">
 				<center>
-					<img class="vertical-logoimage" src="/assets/img/logo.png" alt="logo" width="100%" /></img>
+					<img class="vertical-logoimage" src="/assets/img/logo.png" alt="logo" width="60%" height="20%" /></img>
 				</center>
 			</a>
 		</div>
-		<marquee scrolldelay="350" width="100%" direction="up"  style="height: 55%;">
+		<marquee scrolldelay="350" width="100%" direction="up" style="height: 50%;">
 			<nav>
 				@foreach ( $data4 as $item )
 				<div class="bord" style="text-align: center">
@@ -97,12 +97,10 @@
 			</nav>
 		</marquee>
 
-		<div class="footer_h">
 		<center>
-			<img src="/assets/img/apic.png" width="100%" /></img>
-			<div id="time"></div>
+			<img src="/assets/img/apic.png" width="60%" heigth="10%" /></img>
+			<div id="time" height="5%"></div>
 		</center>
-		</div>
 	</div>
 
 	<div id="home" class="container-wrapper container-fullwidth">

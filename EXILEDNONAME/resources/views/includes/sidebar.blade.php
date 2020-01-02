@@ -26,14 +26,14 @@
     <ul class="nav">
       <li class="nav-header"> Main </li>
       <li class="{{ (request()->is('dashboard')) ? 'active' : '' }}">
-        <a href="#">
+        <a href="/dashboard">
           <i class="fa fa-th-large"></i>
           <span>Dashboard</span>
         </a>
       </li>
 
       <!-- CONTENTS -->
-      <li class="has-sub {{ (request()->is('dashboard/galleries*')) ? 'active' : '' }}">
+      <!-- <li class="has-sub {{ (request()->is('dashboard/galleries*')) ? 'active' : '' }}">
         <a href="javascript:;">
           <b class="caret"></b>
           <i class="fa fa-table"></i>
@@ -52,7 +52,7 @@
             </ul>
           </li>
         </ul>
-      </li>
+      </li> -->
       <!-- // CONTENTS -->
 
       <!-- CONTENTS -->
@@ -69,15 +69,6 @@
       </li>
       <!-- // CONTENTS -->
 
-      <!-- SET-UP -->
-      <li class="{{ (request()->is('dashboard/setups*')) ? 'active' : '' }}">
-        <a href="/dashboard/setups">
-          <i class="fa fa-table"></i>
-          <span> Setups </span>
-        </a>
-      </li>
-      <!-- // SETUPS -->
-
       <!-- CONTENTS -->
       <li class="has-sub {{ (request()->is('dashboard/setups*')) ? 'active' : '' }}">
         <a href="javascript:;">
@@ -86,6 +77,12 @@
           <span> Setups </span>
         </a>
         <ul class="sub-menu">
+
+          <li class="{{ (request()->is('dashboard/setups')) ? 'active' : '' }}">
+            <a href="/dashboard/setups">
+              <span> General </span>
+            </a>
+          </li>
 
           <!-- SLIDE 1 -->
           <li class="has-sub {{ (request()->is('dashboard/setups/slide-1*')) ? 'active' : '' }}">
