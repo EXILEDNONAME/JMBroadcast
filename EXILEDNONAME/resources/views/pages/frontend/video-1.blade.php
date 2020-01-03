@@ -69,7 +69,7 @@
     <video id="video1" class="video-js vjs-default-skin" preload="auto" width="100%" src="EXILEDNONAME/files/{{ $item->file }}" autoplay></video>
     @endforeach
     @else
-    <video id="video1" class="video-js vjs-default-skin" preload="auto" width="100%" src="EXILEDNONAME/files/404.mkv" autoplay muted></video>
+    <video id="video1" class="video-js vjs-default-skin" preload="auto" width="100%" src="EXILEDNONAME/files/404.mp4" autoplay muted></video>
     @endif
   </div>
 </div>
@@ -77,7 +77,7 @@
 </div>
 <footer>
   <div class="fullscreen-footer-wrap" style="background: rgba(0,0,0,0.5);">
-    <marquee scrolldelay="125" width="100%">
+    <marquee scrollamount="1" scrolldelay="1" width="100%">
       <font font size="4" style="color: #fff"><span id="footer_lines"></span></font>
     </marquee>
   </div>

@@ -86,7 +86,7 @@
 				</center>
 			</a>
 		</div>
-		<marquee scrolldelay="350" width="100%" direction="up" style="height: 50%;">
+		<marquee scrollamount="1" scrolldelay="1" direction="up" height="55%" width="100%">
 			<nav>
 				@foreach ( $data4 as $item )
 				<div class="bord" style="text-align: center">

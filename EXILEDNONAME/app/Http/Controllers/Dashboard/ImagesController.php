@@ -25,7 +25,7 @@ class ImagesController extends Controller {
   public function process(Request $request){
     $this->validate($request, [
       'name' => 'required|unique:images',
-      'file' => 'required|mimes:jpg,jpeg,JPG,JPEG,png,bmp,gif|max:1000000',
+      'file' => 'required|mimes:jpg,jpeg,JPG,JPEG,png,bmp,gif|max:1024',
     ]);
 
     $file = $request->file('file');

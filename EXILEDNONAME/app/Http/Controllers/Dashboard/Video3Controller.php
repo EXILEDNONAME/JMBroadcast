@@ -25,7 +25,7 @@ class Video3Controller extends Controller {
   public function process(Request $request){
     $this->validate($request, [
       'name' => 'required|unique:videos',
-      'file' => 'required|mimes:mp4,mpeg,m4v,mov,avi,flv|max:1000000',
+      'file' => 'required|mimes:mp4,mpeg,m4v,mov,avi,flv|max:500000',
     ]);
 
     $file = $request->file('file');

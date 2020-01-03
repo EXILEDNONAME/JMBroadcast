@@ -42,7 +42,7 @@
 	</div>
 
 	<div class="border-bottom bottom-position">
-		<marquee scrolldelay="125" width="100%">
+		<marquee scrollamount="1" scrolldelay="1" width="100%">
 			<font font size="4"><span id="footer_lines"></span></font>
 		</marquee>
 		<center> <a href="#"> <span id="footer"></span> </a> </center>
