@@ -80,7 +80,7 @@
 
 	<div class="vertical-menu clearfix">
 		<div class="vertical-logo-wrap">
-			<a href="http://kinetika.imaginem.co?menu_type=vertical">
+			<a href="#">
 				<center>
 					<img class="vertical-logoimage" src="/assets/img/logo.png" alt="logo" width="60%" height="20%" /></img>
 				</center>
@@ -189,16 +189,16 @@ responsiveRefreshRate: 200,
 	</div>
 </footer>
 
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/menu/verticalmenu.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/jquery.nicescroll.min.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/jquery.fitvids.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/owlcarousel/owl.carousel.min.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-includes/js/jquery/ui/widget.min.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-includes/js/jquery/ui/tooltip.min.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/stickySidebar.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/common.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/supersized/supersized.3.2.7.min.js'></script>
-<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/supersized/supersized.shutter.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/verticalmenu.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/nicescroll.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/fitvids.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/owl-carousel.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/widget.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/tooltip.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/stickySidebar.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/common.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/supersized-327.js'></script>
+<script type='text/javascript' src='/assets/theme/frontend/index/supersized-shutter.js'></script>
 <script>
 // AUTO REFRESH DATETIME
 setInterval(
