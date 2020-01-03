@@ -97,7 +97,7 @@
 				x.innerHTML = xJam;
 			});
 		} ,
-		3000
+		25000
 	);
 
 	// AUTO REFRESH FOOTER
@@ -109,7 +109,7 @@
 				x.innerHTML = xJam;
 			});
 		} ,
-		3000
+		25000
 	);
 
 	// AUTO REFRESH FOOTER LINES
@@ -121,7 +121,7 @@
 				x.innerHTML = xJam;
 			});
 		} ,
-		3000
+		25000
 	);
 	</script>
 </body>
