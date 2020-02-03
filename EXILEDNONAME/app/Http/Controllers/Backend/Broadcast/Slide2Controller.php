@@ -70,10 +70,14 @@ class Slide2Controller extends Controller {
     return redirect()->route('slide-2.index')->with('success', 'Slide has been updated');
   }
 
-  public function destroy($id)
-  {
+  public function destroy($id) {
+    $delete = Slide2::where('id', $id)->get();
+    foreach ( $delete as $item ) {
+      unlink(base_path('files/'. $item->file));
       Slide2::destroy($id);
-      return redirect()->route('slide-2.index')->with('success', 'Slide has been removed');
+    }
+
+    return redirect()->route('slide-2.index')->with('success', 'Slide has been removed');
   }
 
   public function enable($id) {

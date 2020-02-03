@@ -70,10 +70,14 @@ class Video3Controller extends Controller {
     return redirect()->route('video-3.index')->with('success', 'Video has been updated');
   }
 
-  public function destroy($id)
-  {
+  public function destroy($id) {
+    $delete = Video3::where('id', $id)->get();
+    foreach ( $delete as $item ) {
+      unlink(base_path('files/'. $item->file));
       Video3::destroy($id);
-      return redirect()->route('video-3.index')->with('success', 'Video has been removed');
+    }
+
+    return redirect()->route('video-3.index')->with('success', 'Video has been removed');
   }
 
   public function enable($id) {
