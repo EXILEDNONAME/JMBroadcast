@@ -43,12 +43,7 @@
 			<td><input class="form-control" name="time_slide_2" type="text" value="{{ isset($item->time_slide_2) ? $item->time_slide_2 : old('time_slide_2')}}" ></td>
 		</tr>
 
-		<tr class="form-group {{ $errors->has('logo') ? 'has-error' : ''}}">
-			<td><label for="logo" class="control-label"> Logo </label></td>
-			<td><input class="form-control" name="logo" type="text" value="{{ isset($item->logo) ? $item->logo : old('logo')}}" ></td>
-		</tr>
-
-		<tr class="form-group {{ $errors->has('header') ? 'has-error' : ''}}">
+		<!-- <tr class="form-group {{ $errors->has('header') ? 'has-error' : ''}}">
 			<td><label for="header" class="control-label"> Header </label></td>
 			<td><input class="form-control" name="header" type="text" value="{{ isset($item->header) ? $item->header : old('header')}}" ></td>
 		</tr>
@@ -66,24 +61,24 @@
 		<tr class="form-group {{ $errors->has('content') ? 'has-error' : ''}}">
 			<td><label for="content" class="control-label"> Content </label></td>
 			<td><input class="form-control" name="content" type="text" value="{{ isset($item->content) ? $item->content : old('content')}}" ></td>
-		</tr>
+		</tr> -->
 
 		<tr class="form-group {{ $errors->has('content_r') ? 'has-error' : ''}}">
 			<td><label for="content_r" class="control-label"> Content Right </label></td>
 			<td><input class="form-control" name="content_r" type="text" value="{{ isset($item->content_r) ? $item->content_r : old('content_r')}}" ></td>
 		</tr>
 
-		<tr class="form-group {{ $errors->has('content_l') ? 'has-error' : ''}}">
+		<!-- <tr class="form-group {{ $errors->has('content_l') ? 'has-error' : ''}}">
 			<td><label for="content_l" class="control-label"> Content Left </label></td>
 			<td><input class="form-control" name="content_l" type="text" value="{{ isset($item->content_l) ? $item->content_l : old('content_l')}}" ></td>
-		</tr>
+		</tr> -->
 
 		<tr class="form-group {{ $errors->has('footer') ? 'has-error' : ''}}">
 			<td><label for="footer" class="control-label"> Footer </label></td>
 			<td><input class="form-control" name="footer" type="text" value="{{ isset($item->footer) ? $item->footer : old('footer')}}" ></td>
 		</tr>
 
-		<tr class="form-group {{ $errors->has('footer_r') ? 'has-error' : ''}}">
+		<!-- <tr class="form-group {{ $errors->has('footer_r') ? 'has-error' : ''}}">
 			<td><label for="footer_r" class="control-label"> Footer Right </label></td>
 			<td><input class="form-control" name="footer_r" type="text" value="{{ isset($item->footer_r) ? $item->footer_r : old('footer_r')}}" ></td>
 		</tr>
@@ -91,7 +86,7 @@
 		<tr class="form-group {{ $errors->has('footer_l') ? 'has-error' : ''}}">
 			<td><label for="footer_l" class="control-label"> Footer Left </label></td>
 			<td><input class="form-control" name="footer_l" type="text" value="{{ isset($item->footer_l) ? $item->footer_l : old('footer_l')}}" ></td>
-		</tr>
+		</tr> -->
 
 		<tr class="form-group {{ $errors->has('running_text') ? 'has-error' : ''}}">
 			<td><label for="running_text" class="control-label"> Running Text </label></td>

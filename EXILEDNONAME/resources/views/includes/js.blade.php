@@ -1,5 +1,5 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/themes/backend/external/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/themes/backend/external/jquery-3.4.1.min.js"></script>
 <script src="/themes/backend/plugins/jquery-ui/jquery-ui.min.js"></script>
 <script src="/themes/backend/plugins/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 <script src="/themes/backend/plugins/slimscroll/jquery.slimscroll.min.js"></script>

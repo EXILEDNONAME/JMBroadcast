@@ -31,19 +31,19 @@
 	<div class="border-bottom-menu bottom-position">
 		<div class="fadeIn-element" id="menu">
 			<nav class="menu">
-				<ul><li><a href="#home"><span id="datetime"></span></a></li></ul>
+				<ul><li><a href="#home"><span id="time"></span></a></li></ul>
 			</nav>
 		</div>
 		<div class="credits fadeIn-element">
-			<a class="toggle-credits-content"><span id="content_right"></span></a>
+			<a class="toggle-credits-content">{{ $setup->content_r }}</a>
 		</div>
 	</div>
 
 	<div class="border-bottom bottom-position">
 		<marquee scrollamount="1" scrolldelay="1" width="100%">
-			<font font size="4"><span id="footer_lines"></span></font>
+			<font font size="4"> {{ $setup->running_text }} </font>
 		</marquee>
-		<center> <a href="#"> <span id="footer"></span> </a> </center>
+		<center> <a href="#"> {{ $setup->footer }} </a> </center>
 	</div>
 
 	<div id="containerOT">
@@ -77,9 +77,9 @@
 	// AUTO REFRESH FOOTER LINES
 	setInterval(
 		function() {
-			$.get("/data/datetime.php", function(Jam) {
+			$.get("/themes/frontend/datetime.php", function(Jam) {
 				var xJam = Jam;
-				var x = document.getElementById('datetime');
+				var x = document.getElementById('time');
 				x.innerHTML = xJam;
 			});
 		} ,
