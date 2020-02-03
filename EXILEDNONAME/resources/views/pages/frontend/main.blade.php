@@ -7,9 +7,9 @@
 	<meta content="" name="author">
 	<meta content="" name="keywords">
   <meta http-equiv="refresh" content="
-	@if ( $setup->time_slide_1 == 0 ) 15
-	@else {{ $setup->time_slide_1 }}
-	@endif ; URL='/main'" />
+	@if ( $setup->time_slide_2 == 0 ) 15
+	@else {{ $setup->time_slide_2 }}
+	@endif ; URL='/video-1'" />
 	<title> {{ $setup->title }} </title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 	<link rel="shortcut icon" href="/img/jasamarga-ico.png" width="15px" height="15px">

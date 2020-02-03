@@ -25,18 +25,20 @@
 <tr>
   <td style="vertical-align: middle"> Created By </td>
   <td style="vertical-align: middle">
-    @php
-    $show_created_by = DB::table('users')->where('id', $data->created_by)->first('name');
-    echo $show_created_by->name;
-    @endphp
+    @if ( DB::table('users')->where('id', $data->created_by)->first() != false )
+    $show_created_by = DB::table('users')->where('id', $data->created_by)->get();
+    foreach ( $show_created_by as $item )
+    echo $item->name;
+    @endif
   </td>
 </tr>
 <tr>
   <td style="vertical-align: middle"> Updated By </td>
   <td style="vertical-align: middle">
-    @php
-    $show_updated_by = DB::table('users')->where('id', $data->updated_by)->first('name');
-    echo $show_updated_by->name;
-    @endphp
+    @if ( DB::table('users')->where('id', $data->updated_by)->first() != false )
+    $show_updated_by = DB::table('users')->where('id', $data->updated_by)->get();
+    foreach ( $show_updated_by as $item )
+    echo $item->name;
+    @endif
   </td>
 </tr>
