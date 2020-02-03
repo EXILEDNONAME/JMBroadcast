@@ -82,7 +82,7 @@
 			<td><label for="footer_r" class="control-label"> Footer Right </label></td>
 			<td><input class="form-control" name="footer_r" type="text" value="{{ isset($item->footer_r) ? $item->footer_r : old('footer_r')}}" ></td>
 		</tr>
-
+ 
 		<tr class="form-group {{ $errors->has('footer_l') ? 'has-error' : ''}}">
 			<td><label for="footer_l" class="control-label"> Footer Left </label></td>
 			<td><input class="form-control" name="footer_l" type="text" value="{{ isset($item->footer_l) ? $item->footer_l : old('footer_l')}}" ></td>
