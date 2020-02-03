@@ -57,23 +57,23 @@ class LoginController extends Controller
     return ['username' => $request->get('email'), 'password'=>$request->get('password')];
   }
 
-  function authenticated(Request $request) {
-    $email = $request->get('email');
-
-    if ( User::where('username', $email)->get('id')->first() == true ) {
-      $data = User::where('username', $email)->get('id')->first();
-      Absent::create(['id_user' => $data->id ]);
-    }
-
-    if ( User::where('email', $email)->get('id')->first() == true ) {
-      $data = User::where('email', $email)->get('id')->first();
-      Absent::create(['id_user' => $data->id ]);
-    }
-
-    if ( User::where('phone', $email)->get('id')->first() == true ) {
-      $data = User::where('phone', $email)->get('id')->first();
-      Absent::create(['id_user' => $data->id ]);
-    }
-
-  }
+  // function authenticated(Request $request) {
+  //   $email = $request->get('email');
+  //
+  //   if ( User::where('username', $email)->get('id')->first() == true ) {
+  //     $data = User::where('username', $email)->get('id')->first();
+  //     Absent::create(['id_user' => $data->id ]);
+  //   }
+  //
+  //   if ( User::where('email', $email)->get('id')->first() == true ) {
+  //     $data = User::where('email', $email)->get('id')->first();
+  //     Absent::create(['id_user' => $data->id ]);
+  //   }
+  //
+  //   if ( User::where('phone', $email)->get('id')->first() == true ) {
+  //     $data = User::where('phone', $email)->get('id')->first();
+  //     Absent::create(['id_user' => $data->id ]);
+  //   }
+  //
+  // }
 }
