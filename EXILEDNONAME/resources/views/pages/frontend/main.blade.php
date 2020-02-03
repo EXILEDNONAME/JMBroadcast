@@ -3,21 +3,19 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>
-		{{ $data3->title }}
-	</title>
 	<meta content="" name="description">
 	<meta content="" name="author">
 	<meta content="" name="keywords">
-	<meta http-equiv="refresh" content="
-	@if ( $data3->timer_slider_image == 0 ) 1
-	@else {{ $data3->timer_slider_image }}
-	@endif ; URL='/video-1'" />
+  <meta http-equiv="refresh" content="
+	@if ( $setup->time_slide_1 == 0 ) 15
+	@else {{ $setup->time_slide_1 }}
+	@endif ; URL='/main'" />
+	<title> {{ $setup->title }} </title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-	<link rel="shortcut icon" href="/assets/img/jasamarga-ico.png" width="15px" height="15px">
-	<link href="/assets/theme/frontend/main/plugins.css" media="all" rel="stylesheet" type="text/css">
-	<link href="/assets/theme/frontend/main/style.css" media="all" rel="stylesheet" type="text/css"><!-- style end -->
-	<script type="text/javascript" src="/assets/js/frontend/jquery-1.4.2.min.js"></script>
+	<link rel="shortcut icon" href="/img/jasamarga-ico.png" width="15px" height="15px">
+	<link href="/themes/frontend/main/plugins.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/themes/frontend/main/style.css" media="all" rel="stylesheet" type="text/css"><!-- style end -->
+	<script type="text/javascript" src="/js/frontend/jquery-1.4.2.min.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7COswald:300,400,700" rel="stylesheet" type="text/css"><!-- google fonts end -->
 </head>
 <body class="body-light">
@@ -53,7 +51,7 @@
 			<div class="hero-bg">
 				<div class="swiper-container swiper-slider-top-thumbs-vertical">
 					<div class="swiper-wrapper" style="background-color: #fff">
-						@foreach ( $data1 as $item )
+						@foreach ( $slide2 as $item )
 						<div class="swiper-slide overlay cover-all" style="background-image: url('EXILEDNONAME/files/{{ $item->file }}')"></div>
 						@endforeach
 					</div>
@@ -63,7 +61,7 @@
 
 				<div class="swiper-container swiper-slider-bottom-thumbs-vertical" style="background-color: #fff">
 					<div class="swiper-wrapper">
-						@foreach ( $data1 as $item )
+						@foreach ( $slide2 as $item )
 						<div class="swiper-slide" style="background-image: url('EXILEDNONAME/files/{{ $item->file }}')"></div>
 						@endforeach
 					</div>
@@ -72,8 +70,8 @@
 		</div>
 	</div>
 	<script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
-	<script src="/assets/theme/frontend/main/plugins.js" type="text/javascript"></script>
-	<script src="/assets/theme/frontend/main/exilednoname.js" type="text/javascript"></script><!-- scripts end -->
+	<script src="/themes/frontend/main/plugins.js" type="text/javascript"></script>
+	<script src="/themes/frontend/main/exilednoname.js" type="text/javascript"></script><!-- scripts end -->
 
 	<script>
 	// AUTO REFRESH FOOTER LINES
@@ -86,42 +84,6 @@
 			});
 		} ,
 		1000
-	);
-
-	// AUTO REFRESH CONTENT RIGHT
-	setInterval(
-		function() {
-			$.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/content_right.php", function(Jam) {
-				var xJam = Jam;
-				var x = document.getElementById('content_right');
-				x.innerHTML = xJam;
-			});
-		} ,
-		25000
-	);
-
-	// AUTO REFRESH FOOTER
-	setInterval(
-		function() {
-			$.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/footer.php", function(Jam) {
-				var xJam = Jam;
-				var x = document.getElementById('footer');
-				x.innerHTML = xJam;
-			});
-		} ,
-		25000
-	);
-
-	// AUTO REFRESH FOOTER LINES
-	setInterval(
-		function() {
-			$.get("EXILEDNONAME/resources/views/pages/frontend/autorefresh/footer_lines.php", function(Jam) {
-				var xJam = Jam;
-				var x = document.getElementById('footer_lines');
-				x.innerHTML = xJam;
-			});
-		} ,
-		25000
 	);
 	</script>
 </body>

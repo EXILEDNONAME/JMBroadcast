@@ -3,31 +3,31 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        require_once app_path() . '/Helpers/Users.php';
-        require_once app_path() . '/Helpers/Accesses.php';
-        require_once app_path() . '/Helpers/Defaults.php';
-        require_once app_path() . '/Helpers/Dashboard/Image.php';
-        require_once app_path() . '/Helpers/Dashboard/Video.php';
-        require_once app_path() . '/Helpers/Dashboard/Content.php';
-    }
+  /**
+  * Register any application services.
+  *
+  * @return void
+  */
+  public function register()
+  {
+    require_once app_path() . '/Helpers/Backend/DB_Get_Count.php';
+  }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+  /**
+  * Bootstrap any application services.
+  *
+  * @return void
+  */
+  public function boot()
+  {
+    Schema::defaultStringLength(191);
+    config(['app.locale' => 'id']);
+    Carbon::setLocale('id');
+    date_default_timezone_set('Asia/Jakarta');
+  }
 }

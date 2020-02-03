@@ -1,6 +1,0 @@
-@extends('layouts.default')
-@section('title','Settings | CP | Menus')
-@section('page-title','CONTROL PANEL')
-@section('page-description','... Menu ...')
-@section('content-header','Control Panel :: Menus')
-@section('content-body','THIS IS CONTENT BODY')

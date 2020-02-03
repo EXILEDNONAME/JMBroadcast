@@ -4,37 +4,23 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<meta http-equiv="refresh" content="
-	@if ( $data3->timer_slider_image == 0 ) 1
-	@else {{ $data3->timer_slider_image }}
+	@if ( $setup->time_slide_1 == 0 ) 15
+	@else {{ $setup->time_slide_1 }}
 	@endif ; URL='/main'" />
-	<title> {{ $data3->title }} </title>
-	<link rel="shortcut icon" href="/assets/img/jasamarga-ico.png" width="15px" height="15px">
+	<title> {{ $setup->title }} </title>
+	<link rel="shortcut icon" href="/img/jasamarga-ico.png" width="15px" height="15px">
 
-	<link rel='stylesheet' id='MainStyle-css' href='/assets/theme/frontend/style.css' type='text/css' />
-	<link rel='stylesheet' id='verticalmenuCSS-css' href='/assets/theme/frontend/verticalmenu.css' type='text/css' />
-	<link rel='stylesheet' id='featherFonts-css' href='/assets/theme/frontend/feather.css' type='text/css' />
-	<link rel='stylesheet' id='owlcarousel_css-css' href='/assets/theme/frontend/owl-carousel.css' type='text/css' />
-	<link rel='stylesheet' id='MainStyle-Light-css' href='/assets/theme/frontend/style-light.css' type='text/css' />
-	<link rel='stylesheet' id='fontAwesome-css' href='/assets/theme/frontend/font-awesome.css' type='text/css' />
-	<link rel='stylesheet' id='supersized_CSS-css' href='/assets/theme/frontend/supersized.css' type='text/css' />
-	<link rel='stylesheet' id='ResponsiveCSS-css' href='/assets/theme/frontend/responsive.css' type='text/css' />
-	<script src="/assets/theme/frontend/jquery.js"></script>
-	<script type='text/javascript' src='/assets/theme/frontend/jquery-migrate.js'></script>
-	<script type='text/javascript' src='/assets/theme/frontend/pace.js'></script>
-
-
-	<!-- <link rel='stylesheet' id='MainStyle-css'  href='http://kinetika.imaginem.co/wp-content/themes/kinetika/style.css' type='text/css' media='all' />
-	<link rel='stylesheet' id='verticalmenuCSS-css'  href='http://kinetika.imaginem.co/wp-content/themes/kinetika/css/verticalmenu.css' type='text/css' media='screen' />
-	<link rel='stylesheet' id='featherFonts-css'  href='http://kinetika.imaginem.co/wp-content/themes/kinetika/css/fonts/feather-webfont/feather.css' type='text/css' media='screen' />
-	<link rel='stylesheet' id='owlcarousel_css-css'  href='http://kinetika.imaginem.co/wp-content/themes/kinetika/css/owlcarousel/owl.carousel.css' type='text/css' media='screen' />
-	<link rel='stylesheet' id='MainStyle-Light-css'  href='http://kinetika.imaginem.co/wp-content/themes/kinetika/style-light.css' type='text/css' media='all' />
-	<link rel='stylesheet' id='fontAwesome-css'  href='http://kinetika.imaginem.co/wp-content/themes/kinetika/css/fonts/font-awesome/css/font-awesome.min.css' type='text/css' media='screen' />
-	<link rel='stylesheet' id='supersized_CSS-css'  href='http://kinetika.imaginem.co/wp-content/themes/kinetika/css/supersized/supersized.css' type='text/css' media='screen' />
-	<link rel='stylesheet' id='ResponsiveCSS-css'  href='http://kinetika.imaginem.co/wp-content/themes/kinetika/css/responsive.css' type='text/css' media='screen' />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type='text/javascript' src='http://kinetika.imaginem.co/wp-includes/js/jquery/jquery-migrate.min.js'></script>
-	<script type='text/javascript' src='http://kinetika.imaginem.co/wp-content/themes/kinetika/js/pace.min.js'></script> -->
-
+	<link rel='stylesheet' id='MainStyle-css' href='/themes/frontend/style.css' type='text/css' />
+	<link rel='stylesheet' id='verticalmenuCSS-css' href='/themes/frontend/verticalmenu.css' type='text/css' />
+	<link rel='stylesheet' id='featherFonts-css' href='/themes/frontend/feather.css' type='text/css' />
+	<link rel='stylesheet' id='owlcarousel_css-css' href='/themes/frontend/owl-carousel.css' type='text/css' />
+	<link rel='stylesheet' id='MainStyle-Light-css' href='/themes/frontend/style-light.css' type='text/css' />
+	<link rel='stylesheet' id='fontAwesome-css' href='/themes/frontend/font-awesome.css' type='text/css' />
+	<link rel='stylesheet' id='supersized_CSS-css' href='/themes/frontend/supersized.css' type='text/css' />
+	<link rel='stylesheet' id='ResponsiveCSS-css' href='/themes/frontend/responsive.css' type='text/css' />
+	<script src="/themes/frontend/jquery.js"></script>
+	<script type='text/javascript' src='/themes/frontend/jquery-migrate.js'></script>
+	<script type='text/javascript' src='/themes/frontend/pace.js'></script>
 
 	<style>
 	.footer_h {
@@ -67,119 +53,39 @@
 	</style>
 </head>
 <body class="home blog woocommerce-no-js single-author demo menu-is-vertical page-is-fullscreen">
-
-	<div id="dimmer">
-		<div class="dimmer-outer">
-			<div class="dimmer-inner">
-				<div class="dimmer-text">You can enable/disable right clicking from Theme Options and customize this message too.</div>
-			</div>
-		</div>
-	</div>
-
 	<div class="preloader-cover-screen"></div>
 
 	<div class="vertical-menu clearfix">
 		<div class="vertical-logo-wrap">
 			<a href="#">
 				<center>
-					<img class="vertical-logoimage" src="/assets/img/logo.png" alt="logo" width="60%" height="20%" /></img>
+					<img class="vertical-logoimage" src="/img/logo.png" alt="logo" width="60%" height="20%" /></img>
 				</center>
 			</a>
 		</div>
 		<marquee scrollamount="1" scrolldelay="1" direction="up" height="55%" width="100%">
 			<nav>
-				@foreach ( $data4 as $item )
+				@foreach ( $content as $item )
 				<div class="bord" style="text-align: center">
-					<b> {{ $item->name }} </b><br />
-					{{ $item->description }}
+					<b> {{ $item->title }} </b><br />
+					{{ $item->content }}
 				</div>
 				@endforeach
 			</nav>
 		</marquee>
 
 		<center>
-			<img src="/assets/img/apic.png" width="60%" heigth="10%" /></img>
+			<img src="/img/apic.png" width="60%" heigth="10%" /></img>
 			<div id="time" height="5%"></div>
 		</center>
 	</div>
 
 	<div id="home" class="container-wrapper container-fullwidth">
-		<!-- <ul id="slideshow-data" data-lastslide="3">
-			<li class="slide-0" data-slide="0" data-color="bright" data-src="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/slideshow_1.jpg" data-thumbnail="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/slideshow_1-150x150.jpg" data-title="Kinetika Studio"></li>
-			<li class="slide-1" data-slide="1" data-color="bright" data-src="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/slideshow_2.jpg" data-thumbnail="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/slideshow_2-150x150.jpg" data-title="Slideshow &#038; Video"></li>
-			<li class="slide-2" data-slide="2" data-color="dark" data-src="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/slideshow_3.jpg" data-thumbnail="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/slideshow_3-150x150.jpg" data-title="Events Support"></li>
-			<li class="slide-3" data-slide="3" data-color="bright" data-src="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/slideshow_4.jpg" data-thumbnail="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/07/slideshow_4-150x150.jpg" data-title="Kinetika Studio"></li>
-		</ul> -->
-
-		<!-- <div class="slideshow-controls-wrap">
-			<div id="slidecounter">
-				<span class="slidenumber"></span> / <span class="totalslides"></span>
-			</div>
-
-			<div class="super-navigation">
-				<div class="prevnext-wrap">
-					<a id="nextslide" class="load-item"><i class="fa fa-angle-right"></i></a>
-				</div>
-				<div class="prevnext-wrap">
-					<a id="prevslide" class="load-item"><i class="fa fa-angle-left"></i></a>
-				</div>
-			</div>
-
-			<div id="controls-wrapper" class="load-item">
-				<div id="controls">
-					<a id="play-button"><i id="pauseplay" class="feather-icon-pause"></i></a>
-				</div>
-			</div>
-
-		</div> -->
 
 		<div id="slidecaption"></div>
 		<div id="progress-back" class="load-item">
 			<div id="progress-bar"></div>
 		</div>
-
-		<!-- CAROUSEL -->
-		<!-- <div class="gridblock-owlcarousel-wrap mtheme-events-carousel clearfix">
-		<div class="mtheme-events-heading">Upcoming Events</div>
-		<div id="owl-6033-5e05971639f1f" class="owl-carousel owl-slideshow-element">
-		<div class="slideshow-box-wrapper">
-		<div class="slideshow-box-image">
-		<a href="http://kinetika.imaginem.co/mevents/event-postponed/?menu_type=vertical">
-		<img src="http://kinetika.imaginem.co/wp-content/uploads/sites/8/2015/05/photodune-11478879-man-fire-show-on-the-beach-m-480x296.jpg" alt="" class="displayed-image"/></img>
-	</a>
-</div>
-<div class="slideshow-box-content">
-<div class="slideshow-box-content-inner">
-<div class="slideshow-box-title">
-<a href="http://kinetika.imaginem.co/mevents/event-postponed/?menu_type=vertical">Event postponed</a>
-</div>
-<div class="slideshow-box-description">Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida pulvinar facilisis.
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<script>
-(function($){
-$(window).load(function(){
-var sync1 = $("#owl-6033-5e05971639f1f");
-sync1.owlCarousel({
-singleItem: true,
-autoPlay: true,
-slideSpeed: 1000,
-navigation: true,
-autoHeight: false,
-pagination: false,
-transitionStyle : "fade",
-navigationText : ["",""],
-responsiveRefreshRate: 200,
-});
-})
-})(jQuery);
-/* ]]> */
-</script> -->
 
 <div class="contentclearfix clearfix"></div>
 </div>
@@ -189,21 +95,21 @@ responsiveRefreshRate: 200,
 	</div>
 </footer>
 
-<script type='text/javascript' src='/assets/theme/frontend/index/verticalmenu.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/nicescroll.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/fitvids.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/owl-carousel.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/widget.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/tooltip.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/stickySidebar.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/common.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/supersized-327.js'></script>
-<script type='text/javascript' src='/assets/theme/frontend/index/supersized-shutter.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/verticalmenu.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/nicescroll.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/fitvids.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/owl-carousel.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/widget.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/tooltip.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/stickySidebar.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/common.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/supersized-327.js'></script>
+<script type='text/javascript' src='/themes/frontend/index/supersized-shutter.js'></script>
 <script>
 // AUTO REFRESH DATETIME
 setInterval(
 	function() {
-		$.get("/data/datetime-id.php", function(Jam) {
+		$.get("/themes/frontend/datetime-id.php", function(Jam) {
 			var xJam = Jam;
 			var x = document.getElementById('time');
 			x.innerHTML = xJam;
@@ -219,7 +125,7 @@ jQuery(function($){
 		slideshow					:	1,
 		autoplay					:	1,
 		start_slide				:	1,
-		image_path				:	'http://kinetika.imaginem.co/wp-content/themes/kinetika/images/supersized/',
+		image_path				:	'http://kinetika.imaginem.co/wp-content/themess/kinetika/images/supersized/',
 		stop_loop					:	0,
 		random						:	0,
 		slide_interval		:	8000,
@@ -242,7 +148,7 @@ jQuery(function($){
 		thumbnail_navigation    : 0,
 		slides						: [
 			<?php
-			foreach ($data1 as $item ) { ?>
+			foreach ($slide1 as $item ) { ?>
 			{
 				image : 'EXILEDNONAME/files/{{ $item->file }}',
 				alttext : 'Forest',

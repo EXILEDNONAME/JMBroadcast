@@ -1,0 +1,12 @@
+<script src="/themes/backend/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+<script src="/themes/backend/external/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="/themes/backend/external/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script src="/themes/backend/external/buttons/1.5.6/js/buttons.flash.min.js"></script>
+<script src="/themes/backend/external/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="/themes/backend/external/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="/themes/backend/external/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="/themes/backend/external/buttons/1.5.6/js/buttons.html5.min.js"></script>
+<script src="/themes/backend/external/buttons/1.5.6/js/buttons.print.min.js"></script>
+<script src="/themes/backend/external/buttons/1.5.2/js/buttons.colVis.js"></script>
+<script src="/themes/backend/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+<script src="/themes/backend/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>

@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  @include('includes.components.head')
-  @stack('css')
+  <meta charset="utf-8" />
+  <title> Dashboard </title>
+  @include('includes.head')
 </head>
 <body>
-	<div id="page-loader" class="fade show"><span class="spinner"></span></div>
-	<div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+  @include('includes.component.page-loader')
+  <div id="page-container" class="fade page-header-fixed page-sidebar-fixed page-with-light-sidebar page-with-two-sidebar show page-right-sidebar-collapsed">
     @include('includes.header')
-		@include('includes.sidebar')
-		<div id="content" class="content">
-			@include('includes.components.breadcrumb')
-			<h1 class="page-header"> @yield('page-header') <small> @yield('page-description') </small></h1>
-				<div class="row">
-          @include('includes.components.notification')
-					@yield('content')
-				</div>
-		</div>
-    @include('includes.components.theme-panel')
-    @include('includes.components.scroll-top')
-	</div>
-	@include('includes.components.base-js')
-  @stack('js')
-  @stack('modal')
+    @include('includes.sidebar-left')
+    @include('includes.sidebar-right')
+
+    @yield('content')
+
+    @include('includes.component.theme-panel')
+    @include('includes.component.scroll-top')
+  </div>
+
+  @include('includes.js')
 </body>
 </html>

@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'id_ID',
 
     /*
     |--------------------------------------------------------------------------
@@ -135,6 +135,8 @@ return [
     */
 
     'providers' => [
+
+      Yajra\DataTables\DataTablesServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -189,6 +191,8 @@ return [
     */
 
     'aliases' => [
+
+      'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,

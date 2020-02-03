@@ -3,14 +3,14 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title> {{ $data3->title }} </title>
-  <link rel='stylesheet' id='MainStyle-css' href='/assets/css/frontend/style.css' type='text/css' media='all' />
-  <link rel='stylesheet' id='MainStyle-Light-css' href='/assets/css/frontend/style-light.css' type='text/css' media='all' />
-  <link rel="shortcut icon" href="/assets/img/jasamarga-ico.png" width="15px" height="15px">
-  <script type='text/javascript' src='/assets/js/frontend/jquery.js'></script>
-  <script type='text/javascript' src='/assets/js/frontend/jquery-migrate.min.js'></script>
-  <script type='text/javascript' src='/assets/js/frontend/pace.min.js'></script>
-  <script type="text/javascript" src="/assets/js/frontend/jquery-1.4.2.min.js"></script>
+  <title> {{ $setup->title }} </title>
+  <link rel='stylesheet' id='MainStyle-css' href='/themes/frontend/css/frontend/style.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='MainStyle-Light-css' href='/themes/frontend/css/frontend/style-light.css' type='text/css' media='all' />
+  <link rel="shortcut icon" href="/img/jasamarga-ico.png" width="15px" height="15px">
+  <script type='text/javascript' src='/themes/frontend/js/frontend/jquery.js'></script>
+  <script type='text/javascript' src='/themes/frontend/js/frontend/jquery-migrate.min.js'></script>
+  <script type='text/javascript' src='/themes/frontend/js/frontend/pace.min.js'></script>
+  <script type="text/javascript" src="/themes/frontend/js/frontend/jquery-1.4.2.min.js"></script>
 
   <style id='ResponsiveCSS-inline-css' type='text/css'>
   .logo img { width: 154px; }
@@ -64,8 +64,8 @@
   </script>
 
   <div id="backgroundvideo">
-    @if ( count($data2) != false )
-    @foreach ( $data2 as $item )
+    @if ( count($video1) != false )
+    @foreach ( $video1 as $item )
     <video id="video1" class="video-js vjs-default-skin" preload="auto" width="100%" src="EXILEDNONAME/files/{{ $item->file }}" autoplay></video>
     @endforeach
     @else
@@ -78,14 +78,14 @@
 <footer>
   <div class="fullscreen-footer-wrap" style="background: rgba(0,0,0,0.5);">
     <marquee scrollamount="1" scrolldelay="1" width="100%">
-      <font font size="4" style="color: #fff"><span id="footer_lines"></span></font>
+      <font font size="4" style="color: #fff"> {{ $setup->running_text }} </font>
     </marquee>
   </div>
 </footer>
 
-<script type='text/javascript' src='/assets/js/frontend/js.cookie.min.js'></script>
-<script type='text/javascript' src='/assets/js/frontend/jquery.stellar.min.js'></script>
-<script type='text/javascript' src='/assets/js/frontend/common.js'></script>
+<script type='text/javascript' src='/themes/frontend/js/frontend/js.cookie.min.js'></script>
+<script type='text/javascript' src='/themes/frontend/js/frontend/jquery.stellar.min.js'></script>
+<script type='text/javascript' src='/themes/frontend/js/frontend/common.js'></script>
 
 
 <!-- VIDEO -->
@@ -106,7 +106,7 @@ setInterval(
       x.innerHTML = xJam;
     });
   } ,
-  25000
+  5000
 );
 </script>
 </body>
