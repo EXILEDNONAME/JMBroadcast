@@ -1,6 +1,6 @@
 <!-- <tr>
-  <td style="vertical-align: middle"> Status </td>
-  <td style="vertical-align: middle"> {{ $data->status }} </td>
+<td style="vertical-align: middle"> Status </td>
+<td style="vertical-align: middle"> {{ $data->status }} </td>
 </tr> -->
 <tr>
   <td style="vertical-align: middle" width="30%"> Sort </td>
@@ -25,20 +25,26 @@
 <tr>
   <td style="vertical-align: middle"> Created By </td>
   <td style="vertical-align: middle">
-    @if ( DB::table('users')->where('id', $data->created_by)->first() != false )
-    $show_created_by = DB::table('users')->where('id', $data->created_by)->get();
-    foreach ( $show_created_by as $item )
-    echo $item->name;
-    @endif
+    <?php
+    if ( DB::table('users')->where('id', $data->created_by)->first() != false ) {
+      $show_created_by = DB::table('users')->where('id', $data->created_by)->get();
+      foreach ( $show_created_by as $item ) {
+        echo $item->name;
+      }
+    }
+    ?>
   </td>
 </tr>
 <tr>
   <td style="vertical-align: middle"> Updated By </td>
   <td style="vertical-align: middle">
-    @if ( DB::table('users')->where('id', $data->updated_by)->first() != false )
-    $show_updated_by = DB::table('users')->where('id', $data->updated_by)->get();
-    foreach ( $show_updated_by as $item )
-    echo $item->name;
-    @endif
+    <?php
+    if ( DB::table('users')->where('id', $data->updated_by)->first() != false ) {
+      $show_updated_by = DB::table('users')->where('id', $data->updated_by)->get();
+      foreach ( $show_updated_by as $item ) {
+        echo $item->name;
+      }
+    }
+    ?>
   </td>
 </tr>

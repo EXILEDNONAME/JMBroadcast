@@ -29,6 +29,7 @@
         <th class="text-nowrap"> Title </th>
         <th> Content </th>
 				<th> Created At </th>
+        <th width="1%" class="text-nowrap"> Sort </th>
         <th width="1%" class="text-nowrap" data-orderable="false"> Active </th>
         <th width="1%" class="text-nowrap" data-orderable="false"></th>
       </tr>
@@ -40,6 +41,7 @@
         <td style="vertical-align: middle"> {{ $item->title }} </td>
         <td style="vertical-align: middle"> {{ $item->content }} </td>
 				<td width="1%" class="text-nowrap" style="vertical-align: middle"> {{ $item->created_at }} </td>
+				<td width="1%" class="text-nowrap" style="vertical-align: middle; text-align:center"> {{ $item->sort }} </td>
 				<td style="vertical-align: middle"> @include('controller.datatable.active') </td>
         <td style="vertical-align: middle"> @include('controller.datatable.action') </td>
       </tr>
