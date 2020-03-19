@@ -6,7 +6,7 @@
 	<meta http-equiv="refresh" content="
 	@if ( $setup->time_slide_1 == 0 ) 15
 	@else {{ $setup->time_slide_1 }}
-	@endif ; URL='/main'" />
+	@endif ; URL='/corona'" />
 	<title> {{ $setup->title }} </title>
 	<link rel="shortcut icon" href="/img/jasamarga-ico.png" width="15px" height="15px">
 

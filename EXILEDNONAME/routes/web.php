@@ -6,6 +6,7 @@ Route::get('/video-1', 'Frontend\HomeController@video1');
 Route::get('/video-2', 'Frontend\HomeController@video2');
 Route::get('/video-3', 'Frontend\HomeController@video3');
 Route::get('/video-4', 'Frontend\HomeController@video4');
+Route::get('/corona', 'Frontend\HomeController@corona');
 
 Auth::routes();
 

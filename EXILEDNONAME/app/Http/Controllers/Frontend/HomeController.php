@@ -31,6 +31,12 @@ class HomeController extends Controller {
     return view('pages.frontend.main', compact('slide2', 'setup'));
   }
 
+  public function corona(){
+    $slide2 = Slide2::where('active', 1)->orderBy('sort', 'ASC')->get();
+    $setup = Setup::first();
+    return view('pages.frontend.corona', compact('slide2', 'setup'));
+  }
+
   public function video1(){
     $video1 = Video1::where('active', 1)->orderBy('sort', 'ASC')->get();
     $setup = Setup::first();
