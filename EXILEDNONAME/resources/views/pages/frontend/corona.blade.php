@@ -75,12 +75,6 @@
           image : 'EXILEDNONAME/files/{{ $item->file }}'
         },
         @endforeach
-        {
-          image : 'https://imaginem.io/kinetika/wp-content/uploads/sites/20/2015/07/slideshow_1.jpg'
-        },
-        {
-          image : 'https://imaginem.io/kinetika/wp-content/uploads/sites/20/2015/07/slideshow_2.jpg'
-        },
       ],
       progress_bar			:	1,
       mouse_scrub				:	1
